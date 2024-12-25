@@ -1,0 +1,348 @@
+@import "style.scss";
+
+/* Global variable for children style */
+.addCourse {
+	.Courses,
+	.terms,
+	.buttonDiscard {
+		background: $Main;
+
+		h3 {
+			color: $Accent02;
+			font-family: Calibri;
+			font-size: 1.75rem;
+			padding-top: 0.2rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			text-align: center;
+		}
+	}
+
+	.title {
+		background: $Accent02;
+
+		h1 {
+			color: $Main;
+			font-size: 2.25rem;
+			margin-top: 0.3rem;
+			text-align: center;
+			font-family: Calibri;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+	}
+	.Courses {
+		h2 {
+			color: $Accent02;
+			font-family: Calibri;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+		input {
+			background-color: $TextBox;
+			border-style: none;
+			border-radius: $Radius;
+			color: $Accent02;
+			font-family: Calibri;
+			text-align: center;
+			font-weight: 700;
+			padding-inline: 0.5rem;
+			font-size: 1.5rem;
+		}
+	}
+	.terms {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		padding-inline: 14px;
+		h3 {
+			align-self: flex-start;
+			color: $Accent02;
+			font-family: Calibri;
+			font-size: 1.5rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+		input {
+			width: 100%;
+			height: 36px;
+			background-color: $TextBox;
+			border-style: none;
+			border-radius: $Radius;
+			color: $Accent02;
+			font-family: Calibri;
+			text-align: center;
+			font-weight: 700;
+			padding-inline: 0.5rem;
+			font-size: 1.5rem;
+		}
+	}
+	.buttonAdd {
+		background: $Accent01;
+
+		h3 {
+			color: $Main;
+			font-family: Calibri;
+			font-size: 1.75rem;
+			padding-top: 0.2rem;
+			font-style: normal;
+			font-weight: 700;
+			text-align: center;
+			line-height: normal;
+		}
+	}
+}
+
+/* Global layout */
+.Courses {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+
+	grid-template-areas:
+		"Course Course Course"
+		"Units Units InputU";
+
+	.CourseName {
+		grid-area: Course;
+	}
+	.UnitsLabel {
+		align-self: flex-start;
+		grid-area: Units;
+	}
+	.units {
+		justify-self: flex-end;
+		align-self: flex-start;
+		grid-area: InputU;
+	}
+}
+
+/* Global variable for styles */
+.addCourse {
+	.title,
+	.Courses,
+	.terms,
+	.buttonDiscard,
+	.buttonAdd {
+		border-radius: $Radius;
+		box-shadow: $Box_Shadow;
+	}
+}
+
+/* Size of the Course section */
+.addCourse {
+	width: 618px;
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	align-items: center;
+	gap: 10px;
+}
+
+/* Desktop */
+@media screen and (width >= 1000px) {
+	.addCourse {
+		grid-template-areas:
+			"title title title title"
+			"course course course course"
+			"term1 term2 term3 term4"
+			"discard discard add add";
+	}
+
+	.addCourse {
+		.title {
+			grid-area: title;
+			height: 57px;
+		}
+		.Courses {
+			grid-area: course;
+			height: 166px;
+
+			h2 {
+				font-size: 1.8rem;
+			}
+			input {
+				width: 523px;
+				height: 40px;
+			}
+			.units {
+				width: 185px;
+			}
+		}
+		.terms {
+			height: 94px;
+
+			#prelim {
+				grid-area: term1;
+			}
+			#midterm {
+				grid-area: term2;
+			}
+			#prefinal {
+				grid-area: term3;
+			}
+			#final {
+				grid-area: term4;
+			}
+		}
+		.buttonDiscard {
+			grid-area: discard;
+			height: 44px;
+		}
+		.buttonAdd {
+			grid-area: add;
+			height: 44px;
+		}
+	}
+}
+
+/* Tablet */
+@media screen and (width < 1000px) {
+	.addCourse {
+		grid-template-areas:
+			"title title title title"
+			"course course course course"
+			"term1 term2 term3 term4"
+			"discard discard add add";
+	}
+
+	.addCourse {
+		.title {
+			grid-area: title;
+			height: 57px;
+		}
+		.Courses {
+			grid-area: course;
+			height: 166px;
+
+			h2 {
+				font-size: 1.8rem;
+			}
+			input {
+				width: 523px;
+				height: 40px;
+			}
+			.units {
+				width: 185px;
+			}
+		}
+		.terms {
+			height: 94px;
+
+			#prelim {
+				grid-area: term1;
+			}
+			#midterm {
+				grid-area: term2;
+			}
+			#prefinal {
+				grid-area: term3;
+			}
+			#final {
+				grid-area: term4;
+			}
+		}
+		.buttonDiscard {
+			grid-area: discard;
+			height: 44px;
+		}
+		.buttonAdd {
+			grid-area: add;
+			height: 44px;
+		}
+	}
+}
+
+/* Mobile */
+@media screen and (width < 700px) {
+	.addCourse {
+		width: 320px;
+
+		grid-template-areas:
+			"title title title title"
+			"course course course course"
+			"term1 term1 term1 term1"
+			"term2 term2 term2 term2"
+			"term3 term3 term3 term3"
+			"term4 term4 term4 term4"
+			"discard discard add add";
+	}
+
+	.addCourse {
+		.title {
+			grid-area: title;
+			height: 57px;
+		}
+		.Courses {
+			grid-area: course;
+			height: 166px;
+
+			h2 {
+				font-size: 1.25rem;
+			}
+			input {
+				width: 274px;
+				height: 36px;
+				font-size: 1.25rem;
+			}
+			.units {
+				width: 108px;
+			}
+		}
+		.terms {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+      justify-content: space-between;
+
+      padding-inline: 35px;
+			h3 {
+        align-self: center;
+				font-size: 1.25rem;
+			}
+			input {
+				width: 154px;
+				height: 36px;
+				font-size: 1.25rem;
+			}
+
+			height: 55px;
+		}
+		#prelim {
+			grid-area: term1;
+		}
+		#midterm {
+			grid-area: term2;
+		}
+		#prefinal {
+			grid-area: term3;
+		}
+		#final {
+			grid-area: term4;
+		}
+		.buttonDiscard {
+			grid-area: discard;
+			height: 44px;
+			h3 {
+				padding-top: 0.5rem;
+				font-size: 1.3rem;
+			}
+		}
+		.buttonAdd {
+			grid-area: add;
+			height: 44px;
+			h3 {
+				padding-top: 0.5rem;
+				font-size: 1.5rem;
+			}
+		}
+	}
+}

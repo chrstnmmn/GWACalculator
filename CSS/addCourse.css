@@ -1,0 +1,350 @@
+/*CSS RESET*/
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* Global variable for children style */
+.addCourse .Courses,
+.addCourse .terms,
+.addCourse .buttonDiscard {
+  background: #FFFFFF;
+}
+.addCourse .Courses h3,
+.addCourse .terms h3,
+.addCourse .buttonDiscard h3 {
+  color: #0B5793;
+  font-family: Calibri;
+  font-size: 1.75rem;
+  padding-top: 0.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+.addCourse .title {
+  background: #0B5793;
+}
+.addCourse .title h1 {
+  color: #FFFFFF;
+  font-size: 2.25rem;
+  margin-top: 0.3rem;
+  text-align: center;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.addCourse .Courses h2 {
+  color: #0B5793;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.addCourse .Courses input {
+  background-color: #EDEDED;
+  border-style: none;
+  border-radius: 10px;
+  color: #0B5793;
+  font-family: Calibri;
+  text-align: center;
+  font-weight: 700;
+  padding-inline: 0.5rem;
+  font-size: 1.5rem;
+}
+.addCourse .terms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 14px;
+}
+.addCourse .terms h3 {
+  align-self: flex-start;
+  color: #0B5793;
+  font-family: Calibri;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.addCourse .terms input {
+  width: 100%;
+  height: 36px;
+  background-color: #EDEDED;
+  border-style: none;
+  border-radius: 10px;
+  color: #0B5793;
+  font-family: Calibri;
+  text-align: center;
+  font-weight: 700;
+  padding-inline: 0.5rem;
+  font-size: 1.5rem;
+}
+.addCourse .buttonAdd {
+  background: #E7C01D;
+}
+.addCourse .buttonAdd h3 {
+  color: #FFFFFF;
+  font-family: Calibri;
+  font-size: 1.75rem;
+  padding-top: 0.2rem;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+  line-height: normal;
+}
+
+/* Global layout */
+.Courses {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "Course Course Course" "Units Units InputU";
+}
+.Courses .CourseName {
+  grid-area: Course;
+}
+.Courses .UnitsLabel {
+  align-self: flex-start;
+  grid-area: Units;
+}
+.Courses .units {
+  justify-self: flex-end;
+  align-self: flex-start;
+  grid-area: InputU;
+}
+
+/* Global variable for styles */
+.addCourse .title,
+.addCourse .Courses,
+.addCourse .terms,
+.addCourse .buttonDiscard,
+.addCourse .buttonAdd {
+  border-radius: 10px;
+  box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Size of the Course section */
+.addCourse {
+  width: 618px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Desktop */
+@media screen and (width >= 1000px) {
+  .addCourse {
+    grid-template-areas: "title title title title" "course course course course" "term1 term2 term3 term4" "discard discard add add";
+  }
+  .addCourse .title {
+    grid-area: title;
+    height: 57px;
+  }
+  .addCourse .Courses {
+    grid-area: course;
+    height: 166px;
+  }
+  .addCourse .Courses h2 {
+    font-size: 1.8rem;
+  }
+  .addCourse .Courses input {
+    width: 523px;
+    height: 40px;
+  }
+  .addCourse .Courses .units {
+    width: 185px;
+  }
+  .addCourse .terms {
+    height: 94px;
+  }
+  .addCourse .terms #prelim {
+    grid-area: term1;
+  }
+  .addCourse .terms #midterm {
+    grid-area: term2;
+  }
+  .addCourse .terms #prefinal {
+    grid-area: term3;
+  }
+  .addCourse .terms #final {
+    grid-area: term4;
+  }
+  .addCourse .buttonDiscard {
+    grid-area: discard;
+    height: 44px;
+  }
+  .addCourse .buttonAdd {
+    grid-area: add;
+    height: 44px;
+  }
+}
+/* Tablet */
+@media screen and (width < 1000px) {
+  .addCourse {
+    grid-template-areas: "title title title title" "course course course course" "term1 term2 term3 term4" "discard discard add add";
+  }
+  .addCourse .title {
+    grid-area: title;
+    height: 57px;
+  }
+  .addCourse .Courses {
+    grid-area: course;
+    height: 166px;
+  }
+  .addCourse .Courses h2 {
+    font-size: 1.8rem;
+  }
+  .addCourse .Courses input {
+    width: 523px;
+    height: 40px;
+  }
+  .addCourse .Courses .units {
+    width: 185px;
+  }
+  .addCourse .terms {
+    height: 94px;
+  }
+  .addCourse .terms #prelim {
+    grid-area: term1;
+  }
+  .addCourse .terms #midterm {
+    grid-area: term2;
+  }
+  .addCourse .terms #prefinal {
+    grid-area: term3;
+  }
+  .addCourse .terms #final {
+    grid-area: term4;
+  }
+  .addCourse .buttonDiscard {
+    grid-area: discard;
+    height: 44px;
+  }
+  .addCourse .buttonAdd {
+    grid-area: add;
+    height: 44px;
+  }
+}
+/* Mobile */
+@media screen and (width < 700px) {
+  .addCourse {
+    width: 320px;
+    grid-template-areas: "title title title title" "course course course course" "term1 term1 term1 term1" "term2 term2 term2 term2" "term3 term3 term3 term3" "term4 term4 term4 term4" "discard discard add add";
+  }
+  .addCourse .title {
+    grid-area: title;
+    height: 57px;
+  }
+  .addCourse .Courses {
+    grid-area: course;
+    height: 166px;
+  }
+  .addCourse .Courses h2 {
+    font-size: 1.25rem;
+  }
+  .addCourse .Courses input {
+    width: 274px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+  .addCourse .Courses .units {
+    width: 108px;
+  }
+  .addCourse .terms {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 35px;
+    height: 55px;
+  }
+  .addCourse .terms h3 {
+    align-self: center;
+    font-size: 1.25rem;
+  }
+  .addCourse .terms input {
+    width: 154px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+  .addCourse #prelim {
+    grid-area: term1;
+  }
+  .addCourse #midterm {
+    grid-area: term2;
+  }
+  .addCourse #prefinal {
+    grid-area: term3;
+  }
+  .addCourse #final {
+    grid-area: term4;
+  }
+  .addCourse .buttonDiscard {
+    grid-area: discard;
+    height: 44px;
+  }
+  .addCourse .buttonDiscard h3 {
+    padding-top: 0.5rem;
+    font-size: 1.3rem;
+  }
+  .addCourse .buttonAdd {
+    grid-area: add;
+    height: 44px;
+  }
+  .addCourse .buttonAdd h3 {
+    padding-top: 0.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=addCourse.css.map */

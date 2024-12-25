@@ -1,0 +1,159 @@
+/*CSS RESET*/
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* Desktop */
+@media screen and (width > 1000px) {
+  header {
+    max-width: auto;
+    height: 88px;
+    flex-shrink: 0;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* Style */
+    background: #0B5793;
+    box-shadow: var(0px 4px 20.6px 0px rgba(0, 0, 0, 0.1));
+  }
+  header .button_links {
+    display: flex;
+    flex-direction: row;
+    gap: 2.6rem;
+  }
+  header .logo {
+    max-width: auto;
+  }
+  header a {
+    color: #FFFFFF;
+    font-family: Calibri;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+  }
+}
+/* Tablet */
+@media screen and (width < 1000px) {
+  header {
+    max-width: auto;
+    height: 66.344px;
+    flex-shrink: 0;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* Style */
+    background: #0B5793;
+    box-shadow: var(0px 4px 20.6px 0px rgba(0, 0, 0, 0.1));
+  }
+  header .button_links {
+    display: flex;
+    flex-direction: row;
+    gap: 2.6rem;
+  }
+  header .logo {
+    max-width: 10rem;
+  }
+  header a {
+    color: #FFFFFF;
+    font-family: Calibri;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+  }
+}
+/* Mobile */
+@media screen and (width < 700px) {
+  header {
+    max-width: auto;
+    height: 63px;
+    flex-shrink: 0;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* Style */
+    background: #0B5793;
+    box-shadow: var(0px 4px 20.6px 0px rgba(0, 0, 0, 0.1));
+  }
+  header .button_links {
+    visibility: collapse;
+    display: flex;
+    flex-direction: row;
+    gap: 2.6rem;
+  }
+  header .logo {
+    max-width: 10rem;
+  }
+  header a {
+    visibility: collapse;
+    color: #FFFFFF;
+    font-family: Calibri;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

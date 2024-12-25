@@ -1,0 +1,24 @@
+@import "style.scss";
+
+body {
+	background: url(../IMG/Pattern\ 45.png) lightgray 0% 0% / 50px 50px repeat;
+
+	.contentWrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@media screen and (width > 700px) {
+	.contentWrapper {
+		padding-block: 10rem;	
+	}
+}
+
+@media screen and (width < 700px) {
+	.contentWrapper {
+		padding-block: 5rem;	
+	}
+}

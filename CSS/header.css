@@ -1,6 +1,8 @@
 /*CSS RESET*/
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -17,18 +19,31 @@ body {
 }
 
 /* 5. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* 6. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 7. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -37,14 +52,20 @@ p {
   text-wrap: pretty;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
 /*
   9. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
@@ -62,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-around;
     align-items: center;
     /* Style */
-    background: #0B5793;
+    background: #0b5793;
     box-shadow: var(0px 4px 20.6px 0px rgba(0, 0, 0, 0.1));
   }
   header .button_links {
@@ -74,8 +95,8 @@ h1, h2, h3, h4, h5, h6 {
     max-width: auto;
   }
   header a {
-    color: #FFFFFF;
-    font-family: Calibri;
+    color: #ffffff;
+    font-family: "Carlito", serif;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 700;
@@ -97,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-around;
     align-items: center;
     /* Style */
-    background: #0B5793;
+    background: #0b5793;
     box-shadow: var(0px 4px 20.6px 0px rgba(0, 0, 0, 0.1));
   }
   header .button_links {
@@ -109,8 +130,8 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 10rem;
   }
   header a {
-    color: #FFFFFF;
-    font-family: Calibri;
+    color: #ffffff;
+    font-family: "Carlito", serif;
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 700;
@@ -132,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     /* Style */
-    background: #0B5793;
+    background: #0b5793;
     box-shadow: var(0px 4px 20.6px 0px rgba(0, 0, 0, 0.1));
   }
   header .button_links {
@@ -146,8 +167,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   header a {
     visibility: collapse;
-    color: #FFFFFF;
-    font-family: Calibri;
+    color: #ffffff;
+    font-family: "Carlito", serif;
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 700;

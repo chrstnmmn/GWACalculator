@@ -1,6 +1,8 @@
 /*CSS RESET*/
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -17,18 +19,31 @@ body {
 }
 
 /* 5. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* 6. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 7. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -37,14 +52,20 @@ p {
   text-wrap: pretty;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
 /*
   9. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
@@ -52,13 +73,13 @@ h1, h2, h3, h4, h5, h6 {
 .addCourse .Courses,
 .addCourse .terms,
 .addCourse .buttonDiscard {
-  background: #FFFFFF;
+  background: #ffffff;
 }
 .addCourse .Courses h3,
 .addCourse .terms h3,
 .addCourse .buttonDiscard h3 {
-  color: #0B5793;
-  font-family: Calibri;
+  color: #0b5793;
+  font-family: "Carlito", serif;
   font-size: 1.75rem;
   padding-top: 0.2rem;
   font-style: normal;
@@ -67,31 +88,31 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 .addCourse .title {
-  background: #0B5793;
+  background: #0b5793;
 }
 .addCourse .title h1 {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 2.25rem;
   margin-top: 0.3rem;
   text-align: center;
-  font-family: Calibri;
+  font-family: "Carlito", serif;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 .addCourse .Courses h2 {
-  color: #0B5793;
-  font-family: Calibri;
+  color: #0b5793;
+  font-family: "Carlito", serif;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 .addCourse .Courses input {
-  background-color: #EDEDED;
+  background-color: #ededed;
   border-style: none;
   border-radius: 10px;
-  color: #0B5793;
-  font-family: Calibri;
+  color: #0b5793;
+  font-family: "Carlito", serif;
   text-align: center;
   font-weight: 700;
   padding-inline: 0.5rem;
@@ -106,8 +127,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .addCourse .terms h3 {
   align-self: flex-start;
-  color: #0B5793;
-  font-family: Calibri;
+  color: #0b5793;
+  font-family: "Carlito", serif;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
@@ -116,22 +137,22 @@ h1, h2, h3, h4, h5, h6 {
 .addCourse .terms input {
   width: 100%;
   height: 36px;
-  background-color: #EDEDED;
+  background-color: #ededed;
   border-style: none;
   border-radius: 10px;
-  color: #0B5793;
-  font-family: Calibri;
+  color: #0b5793;
+  font-family: "Carlito", serif;
   text-align: center;
   font-weight: 700;
   padding-inline: 0.5rem;
   font-size: 1.5rem;
 }
 .addCourse .buttonAdd {
-  background: #E7C01D;
+  background: #e7c01d;
 }
 .addCourse .buttonAdd h3 {
-  color: #FFFFFF;
-  font-family: Calibri;
+  color: #ffffff;
+  font-family: "Carlito", serif;
   font-size: 1.75rem;
   padding-top: 0.2rem;
   font-style: normal;
@@ -301,12 +322,12 @@ h1, h2, h3, h4, h5, h6 {
     width: 108px;
   }
   .addCourse .terms {
+    height: 55px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding-inline: 35px;
-    height: 55px;
   }
   .addCourse .terms h3 {
     align-self: center;

@@ -9,7 +9,7 @@
 
 		h3 {
 			color: $Accent02;
-			font-family: Calibri;
+			font-family: $Carlito;
 			font-size: 1.75rem;
 			padding-top: 0.2rem;
 			font-style: normal;
@@ -27,7 +27,7 @@
 			font-size: 2.25rem;
 			margin-top: 0.3rem;
 			text-align: center;
-			font-family: Calibri;
+			font-family: $Carlito;
 			font-style: normal;
 			font-weight: 700;
 			line-height: normal;
@@ -36,7 +36,7 @@
 	.Courses {
 		h2 {
 			color: $Accent02;
-			font-family: Calibri;
+			font-family: $Carlito;
 			font-style: normal;
 			font-weight: 700;
 			line-height: normal;
@@ -46,7 +46,7 @@
 			border-style: none;
 			border-radius: $Radius;
 			color: $Accent02;
-			font-family: Calibri;
+			font-family: $Carlito;
 			text-align: center;
 			font-weight: 700;
 			padding-inline: 0.5rem;
@@ -63,7 +63,7 @@
 		h3 {
 			align-self: flex-start;
 			color: $Accent02;
-			font-family: Calibri;
+			font-family: $Carlito;
 			font-size: 1.5rem;
 			font-style: normal;
 			font-weight: 700;
@@ -76,7 +76,7 @@
 			border-style: none;
 			border-radius: $Radius;
 			color: $Accent02;
-			font-family: Calibri;
+			font-family: $Carlito;
 			text-align: center;
 			font-weight: 700;
 			padding-inline: 0.5rem;
@@ -88,7 +88,7 @@
 
 		h3 {
 			color: $Main;
-			font-family: Calibri;
+			font-family: $Carlito;
 			font-size: 1.75rem;
 			padding-top: 0.2rem;
 			font-style: normal;
@@ -298,14 +298,14 @@
 			}
 		}
 		.terms {
+			height: 55px;
 			display: flex;
 			flex-direction: row;
 			align-items: center;
-      justify-content: space-between;
-
-      padding-inline: 35px;
+			justify-content: space-between;
+			padding-inline: 35px;
 			h3 {
-        align-self: center;
+				align-self: center;
 				font-size: 1.25rem;
 			}
 			input {
@@ -313,8 +313,6 @@
 				height: 36px;
 				font-size: 1.25rem;
 			}
-
-			height: 55px;
 		}
 		#prelim {
 			grid-area: term1;

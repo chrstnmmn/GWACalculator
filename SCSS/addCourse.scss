@@ -3,7 +3,7 @@
 .addCourse {
 	max-width: 618px;
 	display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	align-items: center;
 	gap: 10px;
 
@@ -23,8 +23,7 @@
 	}
 
 	.Courses,
-	.terms,
-	.buttonDiscard {
+	.terms {
 		background: $Main;
 
 		h3 {
@@ -157,24 +156,32 @@
 		}
 	}
 	.buttonDiscard {
+		background: $Main;
 		grid-area: discard;
 		height: 44px;
+		color: $Accent02;
+		font-family: $Carlito;
+		font-size: 1.75rem;
+		padding-top: 0.2rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		text-align: center;
+		border-style: none;
 	}
 	.buttonAdd {
 		grid-area: add;
 		height: 44px;
 		background: $Accent01;
-
-		h3 {
-			color: $Main;
-			font-family: $Carlito;
-			font-size: 1.75rem;
-			padding-top: 0.2rem;
-			font-style: normal;
-			font-weight: 700;
-			text-align: center;
-			line-height: normal;
-		}
+		color: $Main;
+		font-family: $Carlito;
+		font-size: 1.75rem;
+		padding-top: 0.2rem;
+		font-style: normal;
+		font-weight: 700;
+		text-align: center;
+		line-height: normal;
+		border-style: none;
 	}
 }
 
@@ -243,18 +250,12 @@
 		.buttonDiscard {
 			grid-area: discard;
 			height: 44px;
-			h3 {
-				padding-top: 0.5rem;
-				font-size: 1.3rem;
-			}
+			font-size: 1.3rem;
 		}
 		.buttonAdd {
 			grid-area: add;
 			height: 44px;
-			h3 {
-				padding-top: 0.5rem;
-				font-size: 1.5rem;
-			}
+			font-size: 1.5rem;
 		}
 	}
 }

@@ -1,126 +1,71 @@
 @import "style.scss";
 
-/* Desktop */
-@media screen and (width > 1000px) {
-	header {
-		max-width: auto;
-		height: 88px;
-		flex-shrink: 0;
-		position: sticky;
-		z-index: 100;
-		top: 0;
+header {
+	max-width: auto;
+	height: 88px;
+	flex-shrink: 0;
+	position: sticky;
+	z-index: 100;
+	top: 0;
 
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+
+	/* Style */
+	background: $Accent02;
+	box-shadow: var($Box_Shadow);
+
+	.button_links {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-around;
-		align-items: center;
+		gap: 2.6rem;
+	}
 
-		/* Style */
-		background: $Accent02;
-		box-shadow: var($Box_Shadow);
+	.logo {
+		max-width: auto;
+	}
 
-		.button_links {
-			display: flex;
-			flex-direction: row;
-			gap: 2.6rem;
-		}
-
-		.logo {
-			max-width: auto;
-		}
-
-		a {
-			color: $Main;
-			font-family: $Carlito;
-			font-size: 1.5rem;
-			font-style: normal;
-			font-weight: 700;
-			line-height: normal;
-			text-decoration: none;
-		}
+	a {
+		color: $Main;
+		font-family: $Carlito;
+		font-size: 1.5rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		text-decoration: none;
 	}
 }
 
-/* Tablet */
+@media screen and (width > 1000px) {
+	
+}
+
 @media screen and (width < 1000px) {
 	header {
-		max-width: auto;
 		height: 66.344px;
-		flex-shrink: 0;
-		position: sticky;
-		z-index: 100;
-		top: 0;
-
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
-		align-items: center;
-
-		/* Style */
-		background: $Accent02;
-		box-shadow: var($Box_Shadow);
-
-		.button_links {
-			display: flex;
-			flex-direction: row;
-			gap: 2.6rem;
-		}
 
 		.logo {
 			max-width: 10rem;
 		}
 
 		a {
-			color: $Main;
-			font-family: $Carlito;
 			font-size: 1.25rem;
-			font-style: normal;
-			font-weight: 700;
-			line-height: normal;
-			text-decoration: none;
 		}
 	}
 }
 
-/* Mobile */
 @media screen and (width < 700px) {
 	header {
-		max-width: auto;
 		height: 63px;
-		flex-shrink: 0;
-		position: sticky;
-		z-index: 100;
-		top: 0;
 
-		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 
-		/* Style */
-		background: $Accent02;
-		box-shadow: var($Box_Shadow);
-
 		.button_links {
 			visibility: collapse;
-			display: flex;
-			flex-direction: row;
-			gap: 2.6rem;
-		}
-
-		.logo {
-			max-width: 10rem;
-		}
-
-		a {
-			visibility: collapse;
-			color: $Main;
-			font-family: $Carlito;
-			font-size: 1.25rem;
-			font-style: normal;
-			font-weight: 700;
-			line-height: normal;
-			text-decoration: none;
 		}
 	}
 }

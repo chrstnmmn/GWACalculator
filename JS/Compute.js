@@ -9,6 +9,7 @@ const prefinal = document.getElementById("prefinalInput").value;
 const final = document.getElementById("finalInput").value;
 
 function computeOverall(term1, term2, term3, term4) {
+  location.reload();
 	if (isNaN(prelim) || isNaN(midterm) || isNaN(prefinal) || isNaN(final)) {
 		console.log("you can only input numeric number!");
 	} else {

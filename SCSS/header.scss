@@ -39,7 +39,6 @@ header {
 }
 
 @media screen and (width > 1000px) {
-	
 }
 
 @media screen and (width < 1000px) {
@@ -66,6 +65,10 @@ header {
 
 		.button_links {
 			visibility: collapse;
+		}
+
+		.logo {
+			max-width: 7rem;
 		}
 	}
 }

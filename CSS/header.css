@@ -123,6 +123,9 @@ header a {
   header .button_links {
     visibility: collapse;
   }
+  header .logo {
+    max-width: 7rem;
+  }
 }
 
 /*# sourceMappingURL=header.css.map */

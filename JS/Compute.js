@@ -45,4 +45,5 @@ function clearForms() {
 	document.getElementById("midtermInput").value = "";
 	document.getElementById("prefinalInput").value = "";
 	document.getElementById("finalInput").value = "";
+	location.reload();
 }

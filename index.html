@@ -48,7 +48,7 @@
 				<div class="Courses">
 					<div class="CourseName">
 						<h2>Course name:</h2>
-						<input type="text" class="InputC" id="courseInput"/>
+						<input type="text" class="InputC" id="courseInput" />
 					</div>
 					<h2 class="UnitsLabel">Number of units:</h2>
 					<input type="text" class="units" id="courseUnit" />
@@ -69,7 +69,11 @@
 					<h3>Final:</h3>
 					<input type="text" class="inputTerms" id="finalInput" />
 				</div>
-				<button class="buttonDiscard" type="button">
+				<button
+					class="buttonDiscard"
+					type="button"
+					onclick="clearForms()"
+				>
 					Discard Course
 				</button>
 				<button

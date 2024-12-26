@@ -8,9 +8,15 @@ function computeOverall() {
 	const midterm = parseFloat(document.getElementById("midtermInput").value);
 	const prefinal = parseFloat(document.getElementById("prefinalInput").value);
 	const final = parseFloat(document.getElementById("finalInput").value);
-
-	if (isNaN(prelim) || isNaN(midterm) || isNaN(prefinal) || isNaN(final) || isNaN(courseUnit)) {
+	if (
+		isNaN(prelim) ||
+		isNaN(midterm) ||
+		isNaN(prefinal) ||
+		isNaN(final) ||
+		isNaN(courseUnit)
+	) {
 		alert("You can only input numeric values!");
+		clearForms();
 		return; // Exit the function if validation fails
 	}
 
@@ -21,5 +27,22 @@ function computeOverall() {
 
 	const totalGrade = total1 + total2 + total3 + total4;
 
-	alert("Course name: " + courseName + "\nCourse unit: " + courseUnit + "\nYour average: " + totalGrade.toFixed(2));
+	alert(
+		"Course name: " +
+			courseName +
+			"\nCourse unit: " +
+			courseUnit.toFixed(2) +
+			"\nYour average: " +
+			totalGrade.toFixed(2)
+	);
+	clearForms();
+}
+
+function clearForms() {
+	document.getElementById("courseInput").value = "";
+	document.getElementById("courseUnit").value = "";
+	document.getElementById("prelimInput").value = "";
+	document.getElementById("midtermInput").value = "";
+	document.getElementById("prefinalInput").value = "";
+	document.getElementById("finalInput").value = "";
 }

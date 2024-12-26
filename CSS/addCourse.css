@@ -69,6 +69,10 @@ h6 {
   isolation: isolate;
 }
 
+button {
+  border-style: none;
+}
+
 .addCourse {
   max-width: 618px;
   display: grid;
@@ -219,7 +223,6 @@ h6 {
   font-weight: 700;
   line-height: normal;
   text-align: center;
-  border-style: none;
 }
 .addCourse .buttonAdd {
   grid-area: add;
@@ -233,7 +236,6 @@ h6 {
   font-weight: 700;
   text-align: center;
   line-height: normal;
-  border-style: none;
 }
 
 @media screen and (width < 700px) {

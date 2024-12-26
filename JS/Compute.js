@@ -47,3 +47,4 @@ function clearForms() {
 	document.getElementById("finalInput").value = "";
 	location.reload();
 }
+  

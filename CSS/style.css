@@ -69,4 +69,8 @@ h6 {
   isolation: isolate;
 }
 
+button {
+  border-style: none;
+}
+
 /*# sourceMappingURL=style.css.map */

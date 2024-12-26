@@ -1,0 +1,242 @@
+/*CSS RESET*/
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+button {
+  border-style: none;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+.contentWrapper .tableWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 37px;
+}
+.contentWrapper .title,
+.contentWrapper .tableTitle,
+.contentWrapper .terms,
+.contentWrapper .overAllGrade,
+.contentWrapper button {
+  border-radius: 10px;
+  box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
+}
+.contentWrapper h1,
+.contentWrapper h2,
+.contentWrapper h3,
+.contentWrapper button {
+  font-family: "Carlito", serif;
+  font-style: normal;
+  line-height: normal;
+}
+
+.title {
+  width: 618px;
+  height: 57px;
+  background: #0b5793;
+}
+.title h1 {
+  color: #ffffff;
+  font-size: 2.25rem;
+  margin-top: 0.3rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.resultTable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75em;
+}
+.resultTable .tableTitle {
+  width: 618px;
+  height: 62px;
+  background: #ffffff;
+}
+.resultTable .tableTitle h2 {
+  color: #0b5793;
+  font-size: 2.25rem;
+  margin-top: 0.3rem;
+  text-align: center;
+  font-family: "Carlito", serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-top: 5px;
+}
+.resultTable .termsAndGrades {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 18px;
+}
+.resultTable .termsAndGrades .terms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-inline: 20px;
+  width: 141px;
+  height: 94px;
+  background: #ffffff;
+}
+.resultTable .termsAndGrades .terms h2 {
+  color: #0b5793;
+  font-family: "Carlito", serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+}
+.resultTable .termsAndGrades .terms h3 {
+  color: #0b5793;
+  font-family: "Carlito", serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.resultTable .overAllGrade {
+  width: 618px;
+  height: 62px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  gap: 10em;
+}
+.resultTable .overAllGrade h2 {
+  color: #0b5793;
+  font-size: 2rem;
+  margin-top: 0.3rem;
+  text-align: end;
+  font-weight: 700;
+  padding-top: 5px;
+}
+.resultTable button {
+  align-self: flex-end;
+  width: 188px;
+  height: 44px;
+  background: #e7c01d;
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-top: 0.3rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+@media screen and (width < 700px) {
+  .contentWrapper .tableWrapper {
+    flex-direction: column;
+  }
+  .contentWrapper .title {
+    width: 320px;
+  }
+  .contentWrapper .tableTitle {
+    width: 320px;
+  }
+  .contentWrapper .tableTitle h2 {
+    font-size: 1.25rem;
+    padding-top: 12px;
+  }
+  .contentWrapper .termsAndGrades {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contentWrapper .termsAndGrades .terms {
+    width: 320px;
+    height: 43px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding-inline: 30px;
+    padding-top: 6px;
+  }
+  .contentWrapper .overAllGrade {
+    gap: 0em;
+    width: 320px;
+  }
+  .contentWrapper .overAllGrade h2 {
+    font-size: 1.5rem;
+    padding-top: 10px;
+  }
+  .contentWrapper button {
+    width: 163px;
+    font-size: 1.25rem;
+  }
+}
+
+/*# sourceMappingURL=listOfCourses.css.map */

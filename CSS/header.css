@@ -69,6 +69,10 @@ h6 {
   isolation: isolate;
 }
 
+button {
+  border-style: none;
+}
+
 header {
   max-width: auto;
   height: 88px;

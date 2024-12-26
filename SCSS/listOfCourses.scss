@@ -1,0 +1,174 @@
+@import "style.scss";
+
+.contentWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 3em;
+
+	.tableWrapper {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 37px;
+	}
+
+	.title,
+	.tableTitle,
+	.terms,
+	.overAllGrade,
+	button {
+		border-radius: $Radius;
+		box-shadow: $Box_Shadow;
+	}
+
+	h1,
+	h2,
+	h3,
+	button {
+		font-family: $Carlito;
+		font-style: normal;
+		line-height: normal;
+	}
+}
+
+.title {
+	width: 618px;
+	height: 57px;
+	background: $Accent02;
+	h1 {
+		color: $Main;
+		font-size: 2.25rem;
+		margin-top: 0.3rem;
+		text-align: center;
+		font-weight: 700;
+	}
+}
+
+.resultTable {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75em;
+	.tableTitle {
+		width: 618px;
+		height: 62px;
+		background: $Main;
+		h2 {
+			color: $Accent02;
+			font-size: 2.25rem;
+			margin-top: 0.3rem;
+			text-align: center;
+			font-family: $Carlito;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			padding-top: 5px;
+		}
+	}
+	.termsAndGrades {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 18px;
+		.terms {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			padding-inline: 20px;
+			width: 141px;
+			height: 94px;
+			background: $Main;
+			h2 {
+				color: $Accent02;
+				font-family: $Carlito;
+				font-size: 1.5rem;
+				font-style: normal;
+				font-weight: 700;
+			}
+			h3 {
+				color: $Accent02;
+				font-family: $Carlito;
+				font-size: 1.5rem;
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+			}
+		}
+	}
+	.overAllGrade {
+		width: 618px;
+		height: 62px;
+		background: $Main;
+		display: flex;
+		justify-content: space-around;
+		gap: 10em;
+		h2 {
+			color: $Accent02;
+			font-size: 2rem;
+			margin-top: 0.3rem;
+			text-align: end;
+			font-weight: 700;
+			padding-top: 5px;
+		}
+	}
+	button {
+		align-self: flex-end;
+		width: 188px;
+		height: 44px;
+		background: $Accent01;
+		color: $Main;
+		font-size: 1.5rem;
+		margin-top: 0.3rem;
+		text-align: center;
+		font-weight: 700;
+	}
+}
+
+@media screen and (width < 700px) {
+	.contentWrapper {
+		.tableWrapper {
+			flex-direction: column;
+		}
+		.title {
+			width: 320px;
+		}
+
+		.tableTitle {
+			width: 320px;
+			h2 {
+				font-size: 1.25rem;
+				padding-top: 12px;
+			}
+		}
+		.termsAndGrades {
+			flex-direction: column;
+			gap: 10px;
+			.terms {
+				width: 320px;
+				height: 43px;
+
+				flex-direction: row;
+				justify-content: space-between;
+				align-content: center;
+				padding-inline: 30px;
+				padding-top: 6px;
+			}
+		}
+		.overAllGrade {
+			gap: 0em;
+			width: 320px;
+			h2 {
+				font-size: 1.5rem;
+				padding-top: 10px;
+			}
+		}
+		button {
+			width: 163px;
+			font-size: 1.25rem;
+		}
+	}
+}

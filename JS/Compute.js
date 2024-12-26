@@ -21,5 +21,5 @@ function computeOverall() {
 
 	const totalGrade = total1 + total2 + total3 + total4;
 
-	alert("Course name: " + courseName + "\nCourse unit: " + courseUnit + "\nYour average: " + totalGrade);
+	alert("Course name: " + courseName + "\nCourse unit: " + courseUnit + "\nYour average: " + totalGrade.toFixed(2));
 }

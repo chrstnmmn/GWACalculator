@@ -15,6 +15,7 @@ header {
 
 	/* Style */
 	background: $Accent02;
+	border-top: 10px solid $Accent01;
 	box-shadow: var($Box_Shadow);
 
 	.button_links {
@@ -37,12 +38,9 @@ header {
 		text-decoration: none;
 	}
 }
-
-@media screen and (width > 1000px) {
-}
-
 @media screen and (width < 1000px) {
 	header {
+		border-top: 8px solid $Accent01;
 		height: 66.344px;
 
 		.logo {
@@ -57,6 +55,7 @@ header {
 
 @media screen and (width < 700px) {
 	header {
+		border-top: 6px solid $Accent01;
 		height: 63px;
 
 		flex-direction: column;
@@ -68,6 +67,7 @@ header {
 		}
 
 		.logo {
+			align-self: center;
 			max-width: 7rem;
 		}
 	}

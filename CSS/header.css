@@ -82,6 +82,7 @@ header {
   align-items: center;
   /* Style */
   background: #0b5793;
+  border-top: 10px solid #e7c01d;
   box-shadow: var(0px 4px 20.6px 0px rgba(0, 0, 0, 0.1));
 }
 header .button_links {
@@ -104,6 +105,7 @@ header a {
 
 @media screen and (width < 1000px) {
   header {
+    border-top: 8px solid #e7c01d;
     height: 66.344px;
   }
   header .logo {
@@ -115,6 +117,7 @@ header a {
 }
 @media screen and (width < 700px) {
   header {
+    border-top: 6px solid #e7c01d;
     height: 63px;
     flex-direction: column;
     justify-content: center;
@@ -124,6 +127,7 @@ header a {
     visibility: collapse;
   }
   header .logo {
+    align-self: center;
     max-width: 7rem;
   }
 }

@@ -72,6 +72,7 @@ h6 {
 .addCourse {
   max-width: 618px;
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
   gap: 10px;
   grid-template-areas: "title title title title" "course course course course" "term1 term2 term3 term4" "discard discard add add";

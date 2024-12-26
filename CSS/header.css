@@ -124,9 +124,10 @@ header a {
     align-items: center;
   }
   header .button_links {
-    visibility: collapse;
+    visibility: hidden;
   }
   header .logo {
+    margin-top: 23px;
     align-self: center;
     max-width: 7rem;
   }

@@ -63,10 +63,11 @@ header {
 		align-items: center;
 
 		.button_links {
-			visibility: collapse;
+			visibility: hidden;
 		}
 
 		.logo {
+			margin-top: 23px;
 			align-self: center;
 			max-width: 7rem;
 		}

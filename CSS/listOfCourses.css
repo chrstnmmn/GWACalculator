@@ -73,12 +73,12 @@ button {
   border-style: none;
 }
 
-.contentWrapper {
+.resultWrapper {
   display: flex;
   flex-direction: column;
   gap: 3em;
 }
-.contentWrapper .tableWrapper {
+.resultWrapper .tableWrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -86,29 +86,29 @@ button {
   justify-content: center;
   gap: 37px;
 }
-.contentWrapper .title,
-.contentWrapper .tableTitle,
-.contentWrapper .terms,
-.contentWrapper .overAllGrade,
-.contentWrapper button {
+.resultWrapper .titleResult,
+.resultWrapper .tableTitle,
+.resultWrapper .terms,
+.resultWrapper .overAllGrade,
+.resultWrapper button {
   border-radius: 10px;
   box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
 }
-.contentWrapper h1,
-.contentWrapper h2,
-.contentWrapper h3,
-.contentWrapper button {
+.resultWrapper h1,
+.resultWrapper h2,
+.resultWrapper h3,
+.resultWrapper button {
   font-family: "Carlito", serif;
   font-style: normal;
   line-height: normal;
 }
 
-.title {
+.titleResult {
   width: 618px;
   height: 57px;
   background: #0b5793;
 }
-.title h1 {
+.titleResult h1 {
   color: #ffffff;
   font-size: 2.25rem;
   margin-top: 0.3rem;
@@ -199,24 +199,24 @@ button {
 }
 
 @media screen and (width < 700px) {
-  .contentWrapper .tableWrapper {
+  .resultWrapper .tableWrapper {
     flex-direction: column;
   }
-  .contentWrapper .title {
+  .resultWrapper .titleResult {
     width: 320px;
   }
-  .contentWrapper .tableTitle {
+  .resultWrapper .tableTitle {
     width: 320px;
   }
-  .contentWrapper .tableTitle h2 {
+  .resultWrapper .tableTitle h2 {
     font-size: 1.25rem;
     padding-top: 12px;
   }
-  .contentWrapper .termsAndGrades {
+  .resultWrapper .termsAndGrades {
     flex-direction: column;
     gap: 10px;
   }
-  .contentWrapper .termsAndGrades .terms {
+  .resultWrapper .termsAndGrades .terms {
     width: 320px;
     height: 43px;
     flex-direction: row;
@@ -225,15 +225,15 @@ button {
     padding-inline: 30px;
     padding-top: 6px;
   }
-  .contentWrapper .overAllGrade {
+  .resultWrapper .overAllGrade {
     gap: 0em;
     width: 320px;
   }
-  .contentWrapper .overAllGrade h2 {
+  .resultWrapper .overAllGrade h2 {
     font-size: 1.5rem;
     padding-top: 10px;
   }
-  .contentWrapper button {
+  .resultWrapper button {
     width: 163px;
     font-size: 1.25rem;
   }

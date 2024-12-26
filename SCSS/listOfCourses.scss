@@ -1,6 +1,6 @@
 @import "style.scss";
 
-.contentWrapper {
+.resultWrapper {
 	display: flex;
 	flex-direction: column;
 	gap: 3em;
@@ -14,7 +14,7 @@
 		gap: 37px;
 	}
 
-	.title,
+	.titleResult,
 	.tableTitle,
 	.terms,
 	.overAllGrade,
@@ -33,7 +33,7 @@
 	}
 }
 
-.title {
+.titleResult {
 	width: 618px;
 	height: 57px;
 	background: $Accent02;
@@ -129,11 +129,11 @@
 }
 
 @media screen and (width < 700px) {
-	.contentWrapper {
+	.resultWrapper {
 		.tableWrapper {
 			flex-direction: column;
 		}
-		.title {
+		.titleResult {
 			width: 320px;
 		}
 

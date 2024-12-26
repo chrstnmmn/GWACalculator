@@ -43,7 +43,7 @@
 		<!--Main Section-->
 		<section class="contentWrapper">
 			<div class="addCourse">
-				<div class="title">
+				<div class="titleCourse">
 					<h1>Course & Grades</h1>
 				</div>
 				<div class="Courses">
@@ -85,181 +85,45 @@
 					Add Course
 				</button>
 			</div>
-		</section>
-		<section class="contentWrapper">
-			<div class="title">
-				<h1>List of Courses</h1>
-			</div>
-			<div class="tableWrapper">
-				<div class="resultTable">
-					<div class="tableTitle">
-						<h2 id="TitleResult">Course or Subject Name</h2>
-					</div>
-					<div class="termsAndGrades">
-						<div class="terms">
-							<h2>Prelim:</h2>
-							<h3 id="PrelimResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Midterm:</h2>
-							<h3 id="MidtermResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Prefinal:</h2>
-							<h3 id="PrefinalResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Final:</h2>
-							<h3 id="FinalResult">00.00</h3>
-						</div>
-					</div>
-					<div class="overAllGrade">
-						<h2>Overall grade</h2>
-						<h2 id="overAllResult">00.00</h2>
-					</div>
-					<button
-						class="RemoveCourseButton"
-						type="button"
-						onclick="removeCourse()"
-					>
-						Remove Course
-					</button>
+			<div class="resultWrapper">
+				<div class="titleResult">
+					<h1>List of Courses</h1>
 				</div>
-				<div class="resultTable">
-					<div class="tableTitle">
-						<h2 id="TitleResult">Course or Subject Name</h2>
+				<div class="tableWrapper">
+					<div class="resultTable">
+						<div class="tableTitle">
+							<h2 id="TitleResult">Course or Subject Name</h2>
+						</div>
+						<div class="termsAndGrades">
+							<div class="terms">
+								<h2>Prelim:</h2>
+								<h3 id="PrelimResult">00.00</h3>
+							</div>
+							<div class="terms">
+								<h2>Midterm:</h2>
+								<h3 id="MidtermResult">00.00</h3>
+							</div>
+							<div class="terms">
+								<h2>Prefinal:</h2>
+								<h3 id="PrefinalResult">00.00</h3>
+							</div>
+							<div class="terms">
+								<h2>Final:</h2>
+								<h3 id="FinalResult">00.00</h3>
+							</div>
+						</div>
+						<div class="overAllGrade">
+							<h2>Overall grade</h2>
+							<h2 id="overAllResult">00.00</h2>
+						</div>
+						<button
+							class="RemoveCourseButton"
+							type="button"
+							onclick="removeCourse()"
+						>
+							Remove Course
+						</button>
 					</div>
-					<div class="termsAndGrades">
-						<div class="terms">
-							<h2>Prelim:</h2>
-							<h3 id="PrelimResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Midterm:</h2>
-							<h3 id="MidtermResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Prefinal:</h2>
-							<h3 id="PrefinalResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Final:</h2>
-							<h3 id="FinalResult">00.00</h3>
-						</div>
-					</div>
-					<div class="overAllGrade">
-						<h2>Overall grade</h2>
-						<h2 id="overAllResult">00.00</h2>
-					</div>
-					<button
-						class="RemoveCourseButton"
-						type="button"
-						onclick="removeCourse()"
-					>
-						Remove Course
-					</button>
-				</div>
-				<div class="resultTable">
-					<div class="tableTitle">
-						<h2 id="TitleResult">Course or Subject Name</h2>
-					</div>
-					<div class="termsAndGrades">
-						<div class="terms">
-							<h2>Prelim:</h2>
-							<h3 id="PrelimResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Midterm:</h2>
-							<h3 id="MidtermResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Prefinal:</h2>
-							<h3 id="PrefinalResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Final:</h2>
-							<h3 id="FinalResult">00.00</h3>
-						</div>
-					</div>
-					<div class="overAllGrade">
-						<h2>Overall grade</h2>
-						<h2 id="overAllResult">00.00</h2>
-					</div>
-					<button
-						class="RemoveCourseButton"
-						type="button"
-						onclick="removeCourse()"
-					>
-						Remove Course
-					</button>
-				</div>
-				<div class="resultTable">
-					<div class="tableTitle">
-						<h2 id="TitleResult">Course or Subject Name</h2>
-					</div>
-					<div class="termsAndGrades">
-						<div class="terms">
-							<h2>Prelim:</h2>
-							<h3 id="PrelimResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Midterm:</h2>
-							<h3 id="MidtermResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Prefinal:</h2>
-							<h3 id="PrefinalResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Final:</h2>
-							<h3 id="FinalResult">00.00</h3>
-						</div>
-					</div>
-					<div class="overAllGrade">
-						<h2>Overall grade</h2>
-						<h2 id="overAllResult">00.00</h2>
-					</div>
-					<button
-						class="RemoveCourseButton"
-						type="button"
-						onclick="removeCourse()"
-					>
-						Remove Course
-					</button>
-				</div>
-				<div class="resultTable">
-					<div class="tableTitle">
-						<h2 id="TitleResult">Course or Subject Name</h2>
-					</div>
-					<div class="termsAndGrades">
-						<div class="terms">
-							<h2>Prelim:</h2>
-							<h3 id="PrelimResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Midterm:</h2>
-							<h3 id="MidtermResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Prefinal:</h2>
-							<h3 id="PrefinalResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Final:</h2>
-							<h3 id="FinalResult">00.00</h3>
-						</div>
-					</div>
-					<div class="overAllGrade">
-						<h2>Overall grade</h2>
-						<h2 id="overAllResult">00.00</h2>
-					</div>
-					<button
-						class="RemoveCourseButton"
-						type="button"
-						onclick="removeCourse()"
-					>
-						Remove Course
-					</button>
 				</div>
 			</div>
 		</section>

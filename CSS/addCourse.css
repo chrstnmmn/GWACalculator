@@ -74,14 +74,14 @@ button {
 }
 
 .addCourse {
-  max-width: 618px;
+  width: 618px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
   gap: 10px;
   grid-template-areas: "title title title title" "course course course course" "term1 term2 term3 term4" "discard discard add add";
 }
-.addCourse .title,
+.addCourse .titleCourse,
 .addCourse .Courses,
 .addCourse .terms,
 .addCourse .buttonDiscard,
@@ -104,12 +104,12 @@ button {
   line-height: normal;
   text-align: center;
 }
-.addCourse .title {
+.addCourse .titleCourse {
   grid-area: title;
   height: 57px;
   background: #0b5793;
 }
-.addCourse .title h1 {
+.addCourse .titleCourse h1 {
   color: #ffffff;
   font-size: 2.25rem;
   margin-top: 0.3rem;
@@ -243,7 +243,7 @@ button {
     width: 320px;
     grid-template-areas: "title title title title" "course course course course" "term1 term1 term1 term1" "term2 term2 term2 term2" "term3 term3 term3 term3" "term4 term4 term4 term4" "discard discard add add";
   }
-  .addCourse .title {
+  .addCourse .titleCourse {
     grid-area: title;
     height: 57px;
   }

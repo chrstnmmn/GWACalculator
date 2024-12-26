@@ -1,7 +1,7 @@
 @import "style.scss";
 
 .addCourse {
-	max-width: 618px;
+	width: 618px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	align-items: center;
@@ -13,7 +13,7 @@
 		"term1 term2 term3 term4"
 		"discard discard add add";
 
-	.title,
+	.titleCourse,
 	.Courses,
 	.terms,
 	.buttonDiscard,
@@ -38,7 +38,7 @@
 		}
 	}
 
-	.title {
+	.titleCourse {
 		grid-area: title;
 		height: 57px;
 		background: $Accent02;
@@ -196,7 +196,7 @@
 			"term4 term4 term4 term4"
 			"discard discard add add";
 
-		.title {
+		.titleCourse {
 			grid-area: title;
 			height: 57px;
 		}

@@ -1,3 +1,6 @@
+"use strict";
+let items = [];
+
 function computeOverall() {
 	const Percent = {
 		microPercent: 0.2,
@@ -12,17 +15,18 @@ function computeOverall() {
 		final: parseFloat(document.getElementById("finalInput").value),
 	};
 
-	if (
-		isNaN(CourseDetail.prelim) ||
-		isNaN(CourseDetail.midterm) ||
-		isNaN(CourseDetail.prefinal) ||
-		isNaN(CourseDetail.final) ||
-		isNaN(CourseDetail.courseUnit)
-	) {
-		alert("You can only input numeric values!");
-		clearForms();
-		return; // Exit the function if validation fails
-	}
+	// if (
+	// 	isNaN(CourseDetail.prelim) ||
+	// 	isNaN(CourseDetail.midterm) ||
+	// 	isNaN(CourseDetail.prefinal) ||
+	// 	isNaN(CourseDetail.final) ||
+	// 	isNaN(CourseDetail.courseUnit)
+	// ) {
+	// 	alert("Invalid Input");
+	// 	console.log("Invalid input");
+	// 	clearForms();
+	// 	return; // Exit the function if validation fails
+	// }
 
 	const ComputeTotal = {
 		total1: CourseDetail.prelim * Percent.microPercent,
@@ -47,10 +51,22 @@ function computeOverall() {
 	document.getElementById("FinalResult").innerText =
 		CourseDetail.final.toFixed(2);
 	document.getElementById("overAllResult").innerText = totalGrade.toFixed(2);
-	clearForms();
 
 	const viewResult = document.getElementById("viewResult");
-	viewResult.scrollIntoView({behavior: "smooth", block: "start", inline: "center"});
+	viewResult.scrollIntoView({
+		behavior: "smooth",
+		block: "start",
+		inline: "center",
+	});
+
+	let itemCount = 0;
+	items.push(CourseDetail.courseName);
+	for (let i = 0; i < items.length; i++) {
+		itemCount = items.length;
+		console.log("Item added: " + itemCount);
+		console.log(items);
+	}
+	clearForms();
 }
 
 function clearForms() {
@@ -60,6 +76,7 @@ function clearForms() {
 	document.getElementById("midtermInput").value = "";
 	document.getElementById("prefinalInput").value = "";
 	document.getElementById("finalInput").value = "";
+	console.log("Item Cleared");
 }
 
 function removeCourse() {
@@ -71,5 +88,10 @@ function removeCourse() {
 	document.getElementById("overAllResult").innerText = "00.00";
 
 	const viewResult = document.getElementById("AddCourse");
-	viewResult.scrollIntoView({behavior: "smooth", block: "end", inline: "end"});
+	viewResult.scrollIntoView({
+		behavior: "smooth",
+		block: "end",
+		inline: "end",
+	});
+	console.log("Course removed");
 }

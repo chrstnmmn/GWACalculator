@@ -1,5 +1,6 @@
 "use strict";
 let items = [];
+let itemCount = 0;
 
 function computeOverall() {
 	const Percent = {
@@ -52,19 +53,23 @@ function computeOverall() {
 		CourseDetail.final.toFixed(2);
 	document.getElementById("overAllResult").innerText = totalGrade.toFixed(2);
 
-	const viewResult = document.getElementById("viewResult");
-	viewResult.scrollIntoView({
-		behavior: "smooth",
-		block: "start",
-		inline: "center",
-	});
-
-	let itemCount = 0;
 	items.push(CourseDetail.courseName);
 	for (let i = 0; i < items.length; i++) {
 		itemCount = items.length;
 		console.log("Item added: " + itemCount);
 		console.log(items);
+
+		if (itemCount > 0) {
+			const viewResult = document.getElementById("viewResult");
+			document.getElementById("viewResult").style.display = "flex";
+			viewResult.scrollIntoView({
+				behavior: "smooth",
+				block: "start",
+				inline: "center",
+			});
+		} else {
+			document.getElementById("viewResult").style.display = "none";
+		}
 	}
 	clearForms();
 }
@@ -86,6 +91,16 @@ function removeCourse() {
 	document.getElementById("PrefinalResult").innerText = "00.00";
 	document.getElementById("FinalResult").innerText = "00.00";
 	document.getElementById("overAllResult").innerText = "00.00";
+
+	if (items.length > 0) {
+		items.pop();
+		itemCount = items.length;
+		console.log("Item removed: " + itemCount);
+		console.log(items);
+	} else {
+		console.log("There's no course yet");
+		console.log(items);
+	}
 
 	const viewResult = document.getElementById("AddCourse");
 	viewResult.scrollIntoView({

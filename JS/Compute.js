@@ -1,9 +1,12 @@
 // initializing variables
 let items = [];
 let itemCount = 0;
+let indexPosition = 0;
+
 
 // this function will be called to compute the average of the grades from prelim to finals
 function computeOverall() {
+	const elementId = Date.now();
 	// this is the percentage the is going to use as a multiplier
 	const Percent = {
 		microPercent: 0.2,
@@ -53,18 +56,21 @@ function computeOverall() {
 	// also this is later gonna be used for computing the overall GWA
 	items
 		.push({
+			elementId,
 			courseName,
 			courseUnit,
 			prelim,
 			midterm,
 			prefinal,
 			final,
-			totalGrade,
+			totalGrade
 		})
 		.toFixed(2);
 	for (let i = 0; i < items.length; i++) {
 		itemCount = items.length;
+		indexPosition = itemCount;
 		console.log("Item added: " + itemCount);
+		console.log("Index position of: " + indexPosition);
 		console.log(items);
 
 		// if the item inside the array is not emtpy, it will show the result section
@@ -78,6 +84,7 @@ function computeOverall() {
 		}
 	}
 	GenerateResultSection(
+		elementId,
 		courseName,
 		prelim,
 		midterm,
@@ -88,49 +95,8 @@ function computeOverall() {
 	clearForms(); // making sure that the forms are clean after getting the input}
 }
 
-// this will remove the item course, also removing it from the array
-function removeCourse() {
-	if (items.length != 0) {
-		items.pop();
-		itemCount = items.length;
-		console.log("Item removed: " + itemCount);
-		console.log(items);
-
-		// if the item is empty, the values will be reset
-		if (items.length == 0) {
-			document.getElementById("TitleResult").innerText =
-				"Course or Subject Name";
-			document.getElementById("PrelimResult").innerText = "00.00";
-			document.getElementById("MidtermResult").innerText = "00.00";
-			document.getElementById("PrefinalResult").innerText = "00.00";
-			document.getElementById("FinalResult").innerText = "00.00";
-			document.getElementById("overAllResult").innerText = "00.00";
-
-			const viewResult = document.getElementById("AddCourse");
-			viewResult.scrollIntoView({
-				behavior: "smooth",
-				block: "end",
-				inline: "end",
-			});
-
-			console.log("Course removed");
-			document.getElementById("viewResult").style.display = "none";
-		}
-	}
-}
-
-// this function is for cleaning the forms
-function clearForms() {
-	document.getElementById("courseInput").value = "";
-	document.getElementById("courseUnit").value = "";
-	document.getElementById("prelimInput").value = "";
-	document.getElementById("midtermInput").value = "";
-	document.getElementById("prefinalInput").value = "";
-	document.getElementById("finalInput").value = "";
-	console.log("Item Cleared");
-}
-
 function GenerateResultSection(
+	elementId,
 	courseName,
 	prelim,
 	midterm,
@@ -144,6 +110,7 @@ function GenerateResultSection(
 	// creating the result table wrapper
 	const resultTable = document.createElement("div");
 	resultTable.className = "resultTable";
+	resultTable.id = elementId;
 
 	// creating the title of the result table
 	const tableTitle = document.createElement("div");
@@ -204,13 +171,14 @@ function GenerateResultSection(
 	overAllResult.textContent = overall.toFixed(2);
 	overAllGrade.appendChild(overAllResult);
 
+
 	// creating the remove course button
 	const RemoveCourseButton = document.createElement("button");
 	RemoveCourseButton.className = "RemoveCourseButton";
 	RemoveCourseButton.type = "button";
 	RemoveCourseButton.textContent = "Remove Course";
 	RemoveCourseButton.onclick = function () {
-		removeCourse();
+		removeCourse(elementId);
 	};
 
 	resultTable.appendChild(tableTitle);
@@ -219,4 +187,40 @@ function GenerateResultSection(
 	resultTable.appendChild(RemoveCourseButton);
 
 	tableWrapper.appendChild(resultTable);
+}
+
+// this will remove the item course, also removing it from the array
+function removeCourse(elementId) {
+	// Find the index of the item with the matching ID
+	const index = items.findIndex((item) => item.elementId === elementId);
+
+	// Remove the item if found
+	if (index !== -1) {
+			items.splice(index, 1); // Remove 1 element at 'index'
+	}
+
+	// Remove the DOM element
+	const element = document.getElementById(elementId);
+	if (element) {
+			element.remove();
+	}
+
+	console.log("Remaining Items: ", items);
+
+	// Hide result section if no items remain
+	if (items.length === 0) {
+			document.getElementById("viewResult").style.display = "none";
+	}
+}
+
+
+// this function is for cleaning the forms
+function clearForms() {
+	document.getElementById("courseInput").value = "";
+	document.getElementById("courseUnit").value = "";
+	document.getElementById("prelimInput").value = "";
+	document.getElementById("midtermInput").value = "";
+	document.getElementById("prefinalInput").value = "";
+	document.getElementById("finalInput").value = "";
+	console.log("Item Cleared");
 }

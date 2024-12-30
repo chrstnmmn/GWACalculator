@@ -318,6 +318,7 @@ button {
   .addCourse .Main-Card .buttonAdd {
     width: 115px;
     height: 24px;
+    margin-top: 8px;
   }
   .addCourse .Main-Card .buttonAdd .add-icons {
     gap: 6px;

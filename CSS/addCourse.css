@@ -321,7 +321,7 @@ button {
     margin-top: 8px;
   }
   .addCourse .Main-Card .buttonAdd .add-icons {
-    gap: 6px;
+    gap: 2px;
   }
   .addCourse .Main-Card .buttonAdd .add-icons svg {
     width: 18px;
@@ -329,7 +329,7 @@ button {
   }
   .addCourse .Main-Card .buttonAdd .add-icons h6 {
     width: 81px;
-    font-size: 0.75rem;
+    font-size: 0.675rem;
   }
 }
 

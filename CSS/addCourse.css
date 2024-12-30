@@ -327,6 +327,7 @@ button {
     height: 18px;
   }
   .addCourse .Main-Card .buttonAdd .add-icons h6 {
+    width: 81px;
     font-size: 0.75rem;
   }
 }

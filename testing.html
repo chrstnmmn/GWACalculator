@@ -16,10 +16,8 @@
 		<!--Fonts-->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Bungee&family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
 			rel="stylesheet"
 		/>
 	</head>
@@ -38,46 +36,55 @@
 			</div>
 		</header>
 		<!--Main Section-->
-		<div class="resultWrapper" id="viewResult" style="display: none">
-			<div class="titleResult">
-				<h1>List of Courses</h1>
-			</div>
-			<div class="tableWrapper" id="mainTableWrapper">
-				<div class="resultTable">
-					<div class="tableTitle">
-						<h2 id="TitleResult">Course or Subject Name</h2>
+		<section>
+			<div class="resultWrapper" id="viewResult" style="display: none">
+				<div class="titleResult">
+					<h1>List of Courses</h1>
+				</div>
+				<div class="tableWrapper" id="mainTableWrapper">
+					<div class="resultTable">
+						<div class="tableTitle">
+							<h2 id="TitleResult">Course or Subject Name</h2>
+						</div>
+						<div class="termsAndGrades">
+							<div class="terms">
+								<h2>Prelim:</h2>
+								<h3 id="PrelimResult">00.00</h3>
+							</div>
+							<div class="terms">
+								<h2>Midterm:</h2>
+								<h3 id="MidtermResult">00.00</h3>
+							</div>
+							<div class="terms">
+								<h2>Prefinal:</h2>
+								<h3 id="PrefinalResult">00.00</h3>
+							</div>
+							<div class="terms">
+								<h2>Final:</h2>
+								<h3 id="FinalResult">00.00</h3>
+							</div>
+						</div>
+						<div class="overAllGrade">
+							<h2>Overall grade</h2>
+							<h2 id="overAllResult">00.00</h2>
+						</div>
+						<button
+							class="RemoveCourseButton"
+							type="button"
+							onclick="removeCourse()"
+						>
+							Remove Course
+						</button>
 					</div>
-					<div class="termsAndGrades">
-						<div class="terms">
-							<h2>Prelim:</h2>
-							<h3 id="PrelimResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Midterm:</h2>
-							<h3 id="MidtermResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Prefinal:</h2>
-							<h3 id="PrefinalResult">00.00</h3>
-						</div>
-						<div class="terms">
-							<h2>Final:</h2>
-							<h3 id="FinalResult">00.00</h3>
-						</div>
-					</div>
-					<div class="overAllGrade">
-						<h2>Overall grade</h2>
-						<h2 id="overAllResult">00.00</h2>
-					</div>
-					<button
-						class="RemoveCourseButton"
-						type="button"
-						onclick="removeCourse()"
-					>
-						Remove Course
-					</button>
 				</div>
 			</div>
-		</div>
+			<div class="summmaryofFindings">
+				<div class="summaryWrapper">
+					<div class="summaryTitle">
+						<h2 id="TitleResult">Summary of Findings</h2>
+					</div>
+				</div>
+			</div>
+		</section>
 	</body>
 </html>

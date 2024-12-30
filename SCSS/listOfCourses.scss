@@ -29,7 +29,6 @@
 	h2,
 	h3,
 	button {
-		font-family: $Inter;
 		font-style: normal;
 		line-height: normal;
 	}
@@ -63,7 +62,6 @@
 			font-size: 2.25rem;
 			margin-top: 0.3rem;
 			text-align: center;
-			font-family: $Inter;
 			font-style: normal;
 			font-weight: 700;
 			line-height: normal;
@@ -86,14 +84,12 @@
 			background: $Main;
 			h2 {
 				color: $Accent02;
-				font-family: $Inter;
 				font-size: 1.5rem;
 				font-style: normal;
 				font-weight: 700;
 			}
 			h3 {
 				color: $Accent02;
-				font-family: $Inter;
 				font-size: 1.5rem;
 				font-style: normal;
 				font-weight: 400;

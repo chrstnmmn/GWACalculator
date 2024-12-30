@@ -1,259 +1,302 @@
 @import "style.scss";
 
 .addCourse {
-	width: 618px;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
-	gap: 10px;
-
-	grid-template-areas:
-		"title title title title"
-		"course course course course"
-		"term1 term2 term3 term4"
-		"discard discard add add";
-
-	.titleCourse,
-	.Courses,
-	.terms,
-	.buttonDiscard,
-	.buttonAdd {
+	.title-AddCourse {
 		border-radius: $Radius;
-		box-shadow: $Box_Shadow;
-	}
-
-	.Courses,
-	.terms {
-		background: $Main;
-
-		h3 {
-			color: $Accent02;
-			font-family: $Inter;
-			font-size: 1.75rem;
-			padding-top: 0.2rem;
-			font-style: normal;
-			font-weight: 700;
-			line-height: normal;
-			text-align: center;
-		}
-	}
-
-	.titleCourse {
-		grid-area: title;
-		height: 57px;
 		background: $Accent02;
+		box-shadow: $Box_Shadow;
 
-		h1 {
-			color: $Main;
-			font-size: 2.25rem;
-			margin-top: 0.3rem;
-			text-align: center;
-			font-family: $Inter;
-			font-style: normal;
-			font-weight: 700;
-			line-height: normal;
-		}
-	}
-	.Courses {
-		grid-area: course;
-		height: 166px;
-
-		h2 {
-			font-size: 1.8rem;
-		}
-		input {
-			width: 523px;
-			height: 40px;
-		}
-		.units {
-			width: 185px;
-		}
-
-		display: grid;
-		justify-content: center;
+		display: flex;
 		align-items: center;
+		justify-content: center;
+		gap: 7px;
 
-		grid-template-columns: auto auto;
-		grid-template-rows: auto auto;
+		width: 594px;
+		height: 47px;
 
-		grid-template-areas:
-			"Course Course Course"
-			"Units Units InputU";
+		pointer-events: none;
+		user-select: none;
 
-		.CourseName {
-			grid-area: Course;
+		margin-bottom: 18px;
+		.icon-AddCourse {
+			width: 25px;
+			height: 22px;
 		}
-		.UnitsLabel {
-			align-self: flex-start;
-			grid-area: Units;
-		}
-		.units {
-			justify-self: flex-end;
-			align-self: flex-start;
-			grid-area: InputU;
-		}
-		h2 {
-			color: $Accent02;
-			font-family: $Inter;
-			font-style: normal;
-			font-weight: 700;
-			line-height: normal;
-		}
-		input {
-			background-color: $TextBox;
-			border-style: none;
-			border-radius: $Radius;
-			color: $Accent02;
-			font-family: $Inter;
+		.titleCourse {
+			color: $Main;
 			text-align: center;
-			font-weight: 700;
-			padding-inline: 0.5rem;
 			font-size: 1.5rem;
+			font-weight: 800;
 		}
 	}
-	.terms {
-		height: 94px;
-
-		#prelim {
-			grid-area: term1;
-		}
-		#midterm {
-			grid-area: term2;
-		}
-		#prefinal {
-			grid-area: term3;
-		}
-		#final {
-			grid-area: term4;
-		}
+	.Main-Card {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		.Courses {
+			width: 594px;
+			height: 166px;
 
-		padding-inline: 14px;
-		h3 {
-			align-self: flex-start;
-			color: $Accent02;
-			font-family: $Inter;
-			font-size: 1.5rem;
-			font-style: normal;
-			font-weight: 700;
-			line-height: normal;
-		}
-		input {
-			width: 100%;
-			height: 36px;
-			background-color: $TextBox;
-			border-style: none;
 			border-radius: $Radius;
-			color: $Accent02;
-			font-family: $Inter;
-			text-align: center;
-			font-weight: 700;
-			padding-inline: 0.5rem;
-			font-size: 1.5rem;
+			background: $Main;
+			box-shadow: $Box_Shadow;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: start;
+			gap: 20px;
+
+			padding-inline: 35px;
+
+			.CourseName {
+				display: flex;
+				flex-direction: column;
+				justify-items: center;
+				align-items: start;
+				gap: 4px;
+
+				h2 {
+					color: $Accent02;
+					font-size: 1.25rem;
+					font-weight: 700;
+					pointer-events: none;
+					user-select: none;
+				}
+				.InputC {
+					width: 523px;
+					height: 36px;
+					background-color: $TextBox;
+					border-radius: $Radius;
+
+					color: $Accent02;
+					text-align: center;
+
+					font-size: 1.25rem;
+					font-weight: 600;
+				}
+			}
+			.UnitsInput {
+				width: 524px;
+
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				.UnitsLabel {
+					color: $Accent02;
+					font-size: 1.25rem;
+					font-weight: 700;
+					pointer-events: none;
+					user-select: none;
+				}
+				.units {
+					width: 131px;
+					height: 36px;
+					background-color: $TextBox;
+					border-radius: $Radius;
+
+					color: $Accent02;
+					text-align: center;
+
+					font-size: 1.25rem;
+					font-weight: 600;
+				}
+			}
 		}
-	}
-	.buttonDiscard {
-		background: $Main;
-		grid-area: discard;
-		height: 44px;
-		color: $Accent02;
-		font-family: $Inter;
-		font-size: 1.75rem;
-		padding-top: 0.2rem;
-		font-style: normal;
-		font-weight: 700;
-		line-height: normal;
-		text-align: center;
-	}
-	.buttonAdd {
-		grid-area: add;
-		height: 44px;
-		background: $Accent01;
-		color: $Main;
-		font-family: $Inter;
-		font-size: 1.75rem;
-		padding-top: 0.2rem;
-		font-style: normal;
-		font-weight: 700;
-		text-align: center;
-		line-height: normal;
+		.Terms {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+
+			width: 594px;
+
+			.terms-sub {
+				width: 141px;
+				height: 86px;
+
+				border-radius: $Radius;
+				background: $Main;
+				box-shadow: $Box_Shadow;
+
+				display: flex;
+				flex-direction: column;
+				align-items: start;
+				justify-content: center;
+				gap: 4px;
+
+				padding-inline: 14px;
+
+				h3 {
+					color: $Accent02;
+					font-size: 1rem;
+					font-weight: 700;
+				}
+				.inputTerms {
+					width: 113px;
+					height: 31px;
+
+					background-color: $TextBox;
+					border-radius: $Radius;
+
+					color: $Accent02;
+					text-align: center;
+
+					font-size: 1rem;
+					font-weight: 600;
+				}
+			}
+		}
+		.buttonAdd {
+			align-self: flex-end;
+
+			width: 144px;
+			height: 31px;
+
+			border-radius: 30px;
+			background: $Accent01;
+			box-shadow: $Box_Shadow;
+
+			display: flex;
+			align-items: center;
+			justify-content: end;
+
+			transition: $transition;
+
+			.add-icons {
+				display: flex;
+				flex-direction: row-reverse;
+				justify-content: center;
+				align-items: center;
+				gap: 10px;
+
+				transition: transform $transition;
+
+				svg {
+					width: 23px;
+					height: 23px;
+					transform: rotate(0deg);
+					transition: transform $transition;
+				}
+
+				h6 {
+					color: $Main;
+					text-align: center;
+					font-size: 0.875rem;
+					font-weight: 700;
+					text-wrap: nowrap;
+				}
+			}
+			&:hover {
+				transform: scale(1.05);
+
+				cursor: pointer;
+				svg {
+					transform: rotate(90deg);
+				}
+			}
+			&:active {
+				transform: scale(0.9);
+				svg {
+					transform: rotate(180deg);
+				}
+			}
+		}
 	}
 }
 
 @media screen and (width < 700px) {
 	.addCourse {
-		width: 320px;
+		.title-AddCourse {
+			width: 280px;
+			height: 30px;
 
-		grid-template-areas:
-			"title title title title"
-			"course course course course"
-			"term1 term1 term1 term1"
-			"term2 term2 term2 term2"
-			"term3 term3 term3 term3"
-			"term4 term4 term4 term4"
-			"discard discard add add";
+			.icon-AddCourse {
+				width: 18px;
+				height: 14px;
+			}
+			.titleCourse {
+				font-size: 1rem;
+				font-weight: 700;
+			}
+		}
+		.Main-Card {
+			gap: 4px;
 
-		.titleCourse {
-			grid-area: title;
-			height: 57px;
-		}
-		.Courses {
-			grid-area: course;
-			height: 166px;
+			.Courses {
+				width: 315px;
+				height: 105px;
 
-			h2 {
-				font-size: 1.25rem;
+				gap: 8px;
+
+				padding-inline: 20px;
+
+				.CourseName {
+					h2 {
+						font-size: 1rem;
+					}
+					.InputC {
+						width: 274px;
+						height: 25px;
+						font-size: 0.75rem;
+					}
+				}
+				.UnitsInput {
+					width: 274px;
+
+					.UnitsLabel {
+						font-size: 1rem;
+					}
+					.units {
+						width: 72px;
+						height: 25px;
+
+						font-size: 0.75rem;
+					}
+				}
 			}
-			input {
-				width: 274px;
-				height: 36px;
-				font-size: 1.25rem;
+			.Terms {
+				width: 315px;
+				gap: 4px;
+
+				.terms-sub {
+					width: 155px;
+					height: 41px;
+
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-between;
+
+					.inputTerms {
+						width: 51.828px;
+						height: 25px;
+
+						font-size: 0.75rem;
+					}
+				}
 			}
-			.units {
-				width: 108px;
+			.buttonAdd {
+				width: 115px;
+				height: 24px;
+
+				.add-icons {
+					gap: 6px;
+
+					svg {
+						width: 18px;
+						height: 18px;
+					}
+					h6 {
+						font-size: 0.75rem;
+					}
+				}
 			}
-		}
-		.terms {
-			height: 55px;
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
-			padding-inline: 22px;
-			h3 {
-				align-self: center;
-				font-size: 1.25rem;
-			}
-			input {
-				width: 154px;
-				height: 36px;
-				font-size: 1.25rem;
-			}
-		}
-		#prelim {
-			grid-area: term1;
-		}
-		#midterm {
-			grid-area: term2;
-		}
-		#prefinal {
-			grid-area: term3;
-		}
-		#final {
-			grid-area: term4;
-		}
-		.buttonDiscard {
-			grid-area: discard;
-			height: 44px;
-			font-size: 1.1rem;
-		}
-		.buttonAdd {
-			grid-area: add;
-			height: 44px;
-			font-size: 1.3rem;
 		}
 	}
 }

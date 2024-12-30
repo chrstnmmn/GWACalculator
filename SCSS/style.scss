@@ -71,7 +71,11 @@ h6 {
 button {
 	border-style: none;
 }
-
+input,
+button {
+	border-style: none;
+	outline-color: #0b5793;
+}
 // Utility Variables
 $Main: #ffffff;
 $Accent01: #e7c01d;
@@ -80,3 +84,4 @@ $TextBox: #ededed;
 $Box_Shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
 $Radius: 10px;
 $Inter: "Inter", serif;
+$transition: .2s cubic-bezier(0.4, 0.01, 0.04, 0.88);

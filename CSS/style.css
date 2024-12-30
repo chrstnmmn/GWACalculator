@@ -73,4 +73,10 @@ button {
   border-style: none;
 }
 
+input,
+button {
+  border-style: none;
+  outline-color: #0b5793;
+}
+
 /*# sourceMappingURL=style.css.map */

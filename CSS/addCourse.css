@@ -73,233 +73,261 @@ button {
   border-style: none;
 }
 
-.addCourse {
-  width: 618px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  align-items: center;
-  gap: 10px;
-  grid-template-areas: "title title title title" "course course course course" "term1 term2 term3 term4" "discard discard add add";
-}
-.addCourse .titleCourse,
-.addCourse .Courses,
-.addCourse .terms,
-.addCourse .buttonDiscard,
-.addCourse .buttonAdd {
-  border-radius: 10px;
-  box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
-}
-.addCourse .Courses,
-.addCourse .terms {
-  background: #ffffff;
-}
-.addCourse .Courses h3,
-.addCourse .terms h3 {
-  color: #0b5793;
-  font-family: "Inter", serif;
-  font-size: 1.75rem;
-  padding-top: 0.2rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-align: center;
-}
-.addCourse .titleCourse {
-  grid-area: title;
-  height: 57px;
-  background: #0b5793;
-}
-.addCourse .titleCourse h1 {
-  color: #ffffff;
-  font-size: 2.25rem;
-  margin-top: 0.3rem;
-  text-align: center;
-  font-family: "Inter", serif;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-.addCourse .Courses {
-  grid-area: course;
-  height: 166px;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  grid-template-areas: "Course Course Course" "Units Units InputU";
-}
-.addCourse .Courses h2 {
-  font-size: 1.8rem;
-}
-.addCourse .Courses input {
-  width: 523px;
-  height: 40px;
-}
-.addCourse .Courses .units {
-  width: 185px;
-}
-.addCourse .Courses .CourseName {
-  grid-area: Course;
-}
-.addCourse .Courses .UnitsLabel {
-  align-self: flex-start;
-  grid-area: Units;
-}
-.addCourse .Courses .units {
-  justify-self: flex-end;
-  align-self: flex-start;
-  grid-area: InputU;
-}
-.addCourse .Courses h2 {
-  color: #0b5793;
-  font-family: "Inter", serif;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-.addCourse .Courses input {
-  background-color: #ededed;
+input,
+button {
   border-style: none;
-  border-radius: 10px;
-  color: #0b5793;
-  font-family: "Inter", serif;
-  text-align: center;
-  font-weight: 700;
-  padding-inline: 0.5rem;
-  font-size: 1.5rem;
+  outline-color: #0b5793;
 }
-.addCourse .terms {
-  height: 94px;
+
+.addCourse {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.addCourse .title-AddCourse {
+  border-radius: 10px;
+  background: #0b5793;
+  box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding-inline: 14px;
+  gap: 7px;
+  width: 594px;
+  height: 47px;
+  pointer-events: none;
+  user-select: none;
+  margin-bottom: 18px;
 }
-.addCourse .terms #prelim {
-  grid-area: term1;
+.addCourse .title-AddCourse .icon-AddCourse {
+  width: 25px;
+  height: 22px;
 }
-.addCourse .terms #midterm {
-  grid-area: term2;
-}
-.addCourse .terms #prefinal {
-  grid-area: term3;
-}
-.addCourse .terms #final {
-  grid-area: term4;
-}
-.addCourse .terms h3 {
-  align-self: flex-start;
-  color: #0b5793;
-  font-family: "Inter", serif;
+.addCourse .title-AddCourse .titleCourse {
+  color: #ffffff;
+  text-align: center;
   font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+  font-weight: 800;
 }
-.addCourse .terms input {
-  width: 100%;
+.addCourse .Main-Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.addCourse .Main-Card .Courses {
+  width: 594px;
+  height: 166px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  padding-inline: 35px;
+}
+.addCourse .Main-Card .Courses .CourseName {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: start;
+  gap: 4px;
+}
+.addCourse .Main-Card .Courses .CourseName h2 {
+  color: #0b5793;
+  font-size: 1.25rem;
+  font-weight: 700;
+  pointer-events: none;
+  user-select: none;
+}
+.addCourse .Main-Card .Courses .CourseName .InputC {
+  width: 523px;
   height: 36px;
   background-color: #ededed;
-  border-style: none;
   border-radius: 10px;
   color: #0b5793;
-  font-family: "Inter", serif;
   text-align: center;
-  font-weight: 700;
-  padding-inline: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
-.addCourse .buttonDiscard {
-  background: #ffffff;
-  grid-area: discard;
-  height: 44px;
+.addCourse .Main-Card .Courses .UnitsInput {
+  width: 524px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.addCourse .Main-Card .Courses .UnitsInput .UnitsLabel {
   color: #0b5793;
-  font-family: "Inter", serif;
-  font-size: 1.75rem;
-  padding-top: 0.2rem;
-  font-style: normal;
+  font-size: 1.25rem;
   font-weight: 700;
-  line-height: normal;
-  text-align: center;
+  pointer-events: none;
+  user-select: none;
 }
-.addCourse .buttonAdd {
-  grid-area: add;
-  height: 44px;
-  background: #e7c01d;
-  color: #ffffff;
-  font-family: "Inter", serif;
-  font-size: 1.75rem;
-  padding-top: 0.2rem;
-  font-style: normal;
-  font-weight: 700;
+.addCourse .Main-Card .Courses .UnitsInput .units {
+  width: 131px;
+  height: 36px;
+  background-color: #ededed;
+  border-radius: 10px;
+  color: #0b5793;
   text-align: center;
-  line-height: normal;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.addCourse .Main-Card .Terms {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 594px;
+}
+.addCourse .Main-Card .Terms .terms-sub {
+  width: 141px;
+  height: 86px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 4px;
+  padding-inline: 14px;
+}
+.addCourse .Main-Card .Terms .terms-sub h3 {
+  color: #0b5793;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.addCourse .Main-Card .Terms .terms-sub .inputTerms {
+  width: 113px;
+  height: 31px;
+  background-color: #ededed;
+  border-radius: 10px;
+  color: #0b5793;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.addCourse .Main-Card .buttonAdd {
+  align-self: flex-end;
+  width: 144px;
+  height: 31px;
+  border-radius: 30px;
+  background: #e7c01d;
+  box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  transition: 0.2s cubic-bezier(0.4, 0.01, 0.04, 0.88);
+}
+.addCourse .Main-Card .buttonAdd .add-icons {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s cubic-bezier(0.4, 0.01, 0.04, 0.88);
+}
+.addCourse .Main-Card .buttonAdd .add-icons svg {
+  width: 23px;
+  height: 23px;
+  transform: rotate(0deg);
+  transition: transform 0.2s cubic-bezier(0.4, 0.01, 0.04, 0.88);
+}
+.addCourse .Main-Card .buttonAdd .add-icons h6 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-wrap: nowrap;
+}
+.addCourse .Main-Card .buttonAdd:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.addCourse .Main-Card .buttonAdd:hover svg {
+  transform: rotate(90deg);
+}
+.addCourse .Main-Card .buttonAdd:active {
+  transform: scale(0.9);
+}
+.addCourse .Main-Card .buttonAdd:active svg {
+  transform: rotate(180deg);
 }
 
 @media screen and (width < 700px) {
-  .addCourse {
-    width: 320px;
-    grid-template-areas: "title title title title" "course course course course" "term1 term1 term1 term1" "term2 term2 term2 term2" "term3 term3 term3 term3" "term4 term4 term4 term4" "discard discard add add";
+  .addCourse .title-AddCourse {
+    width: 280px;
+    height: 30px;
   }
-  .addCourse .titleCourse {
-    grid-area: title;
-    height: 57px;
+  .addCourse .title-AddCourse .icon-AddCourse {
+    width: 18px;
+    height: 14px;
   }
-  .addCourse .Courses {
-    grid-area: course;
-    height: 166px;
+  .addCourse .title-AddCourse .titleCourse {
+    font-size: 1rem;
+    font-weight: 700;
   }
-  .addCourse .Courses h2 {
-    font-size: 1.25rem;
+  .addCourse .Main-Card {
+    gap: 4px;
   }
-  .addCourse .Courses input {
+  .addCourse .Main-Card .Courses {
+    width: 315px;
+    height: 105px;
+    gap: 8px;
+    padding-inline: 20px;
+  }
+  .addCourse .Main-Card .Courses .CourseName h2 {
+    font-size: 1rem;
+  }
+  .addCourse .Main-Card .Courses .CourseName .InputC {
     width: 274px;
-    height: 36px;
-    font-size: 1.25rem;
+    height: 25px;
+    font-size: 0.75rem;
   }
-  .addCourse .Courses .units {
-    width: 108px;
+  .addCourse .Main-Card .Courses .UnitsInput {
+    width: 274px;
   }
-  .addCourse .terms {
-    height: 55px;
-    display: flex;
+  .addCourse .Main-Card .Courses .UnitsInput .UnitsLabel {
+    font-size: 1rem;
+  }
+  .addCourse .Main-Card .Courses .UnitsInput .units {
+    width: 72px;
+    height: 25px;
+    font-size: 0.75rem;
+  }
+  .addCourse .Main-Card .Terms {
+    width: 315px;
+    gap: 4px;
+  }
+  .addCourse .Main-Card .Terms .terms-sub {
+    width: 155px;
+    height: 41px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-inline: 22px;
   }
-  .addCourse .terms h3 {
-    align-self: center;
-    font-size: 1.25rem;
+  .addCourse .Main-Card .Terms .terms-sub .inputTerms {
+    width: 51.828px;
+    height: 25px;
+    font-size: 0.75rem;
   }
-  .addCourse .terms input {
-    width: 154px;
-    height: 36px;
-    font-size: 1.25rem;
+  .addCourse .Main-Card .buttonAdd {
+    width: 115px;
+    height: 24px;
   }
-  .addCourse #prelim {
-    grid-area: term1;
+  .addCourse .Main-Card .buttonAdd .add-icons {
+    gap: 6px;
   }
-  .addCourse #midterm {
-    grid-area: term2;
+  .addCourse .Main-Card .buttonAdd .add-icons svg {
+    width: 18px;
+    height: 18px;
   }
-  .addCourse #prefinal {
-    grid-area: term3;
-  }
-  .addCourse #final {
-    grid-area: term4;
-  }
-  .addCourse .buttonDiscard {
-    grid-area: discard;
-    height: 44px;
-    font-size: 1.1rem;
-  }
-  .addCourse .buttonAdd {
-    grid-area: add;
-    height: 44px;
-    font-size: 1.3rem;
+  .addCourse .Main-Card .buttonAdd .add-icons h6 {
+    font-size: 0.75rem;
   }
 }
 

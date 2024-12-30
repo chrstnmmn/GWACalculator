@@ -1,0 +1,252 @@
+@import 'style.scss';
+
+.addCourse {
+	width: 618px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	align-items: center;
+	gap: 10px;
+
+	grid-template-areas:
+		"title title title title"
+		"course course course course"
+		"term1 term2 term3 term4"
+		"discard discard add add";
+
+	.titleCourse,
+	.Courses,
+	.terms,
+	.buttonDiscard,
+	.buttonAdd {
+		border-radius: $Radius;
+		box-shadow: $Box_Shadow;
+	}
+
+	.inputTerms,
+	.InputC,
+	.units{
+		background-color: $TextBox;
+		border-style: none;
+		border-radius: $Radius;
+		color: $Accent02;
+		text-align: center;
+		font-weight: 600;
+		padding-inline: 0.5rem;
+		font-size: 1.3rem;
+	}
+
+	.Courses,
+	.terms {
+		background: $Main;
+	}
+
+	.titleCourse {
+		grid-area: title;
+		background: $Accent02;
+		color: $Main;
+		font-size: 1.75rem;
+		text-align: center;
+		font-style: normal;
+		font-weight: 700;
+		padding-block: 0.2em;
+	}
+
+	.Courses {
+		grid-area: course;
+		height: 166px;
+
+		h2 {
+			font-size: 1.5rem;
+		}
+		.InputC {
+			width: 523px;
+			height: 40px;
+		}
+		.units {
+			width: 185px;
+		}
+
+		display: grid;
+		justify-content: center;
+		align-items: center;
+
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto;
+
+		grid-template-areas:
+			"Course Course Course"
+			"Units Units InputU";
+
+		.CourseName {
+			grid-area: Course;
+		}
+		.UnitsLabel {
+			align-self: flex-start;
+			grid-area: Units;
+		}
+		.units {
+			justify-self: flex-end;
+			align-self: flex-start;
+			grid-area: InputU;
+		}
+		h2 {
+			color: $Accent02;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+
+		h2 {
+			color: $Accent02;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+		input {
+			background-color: $TextBox;
+			border-style: none;
+			border-radius: $Radius;
+			color: $Accent02;
+			text-align: center;
+			font-weight: 700;
+			padding-inline: 0.5rem;
+			font-size: 1.5rem;
+		}
+	}
+	.terms {
+		height: 94px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		padding-inline: 14px;
+
+		#prelim {
+			grid-area: term1;
+		}
+		#midterm {
+			grid-area: term2;
+		}
+		#prefinal {
+			grid-area: term3;
+		}
+		#final {
+			grid-area: term4;
+		}
+
+		h3 {
+			align-self: flex-start;
+			color: $Accent02;
+			font-size: 1.3rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+		.inputTerms {
+			width: 100%;
+		}
+	}
+	.buttonDiscard {
+		background: $Main;
+		grid-area: discard;
+		height: 44px;
+		color: $Accent02;
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height: normal;
+		text-align: center;
+	}
+	.buttonAdd {
+		grid-area: add;
+		height: 44px;
+		background: $Accent01;
+		color: $Main;
+		font-size: 1.5rem;
+		font-weight: 700;
+		text-align: center;
+		line-height: normal;
+	}
+}
+
+@media screen and (width < 700px) {
+	.addCourse {
+		width: 320px;
+
+		grid-template-areas:
+			"title title title title"
+			"course course course course"
+			"term1 term1 term1 term1"
+			"term2 term2 term2 term2"
+			"term3 term3 term3 term3"
+			"term4 term4 term4 term4"
+			"discard discard add add";
+
+		.titleCourse {
+			grid-area: title;
+			font-size: 1.5rem;
+		}
+
+		.InputC,
+		.inputTerms {
+			font-weight: 200;
+			font-size: 1.3rem;
+		}
+		.Courses {
+			grid-area: course;
+			height: 166px;
+
+			h2 {
+				font-size: 1.25rem;
+			}
+			.InputC {
+				width: 274px;
+				height: 36px;
+				font-size: 1.25rem;
+			}
+			.units {
+				width: 108px;
+			}
+		}
+		.terms {
+			height: 55px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			padding-inline: 22px;
+			h3 {
+				align-self: center;
+				font-size: 1.25rem;
+			}
+			.inputTerms {
+				width: 154px;
+				height: 36px;
+				font-size: 1.25rem;
+			}
+		}
+		#prelim {
+			grid-area: term1;
+		}
+		#midterm {
+			grid-area: term2;
+		}
+		#prefinal {
+			grid-area: term3;
+		}
+		#final {
+			grid-area: term4;
+		}
+		.buttonDiscard {
+			grid-area: discard;
+			height: 44px;
+			font-size: 1.1rem;
+		}
+		.buttonAdd {
+			grid-area: add;
+			height: 44px;
+			font-size: 1.3rem;
+		}
+	}
+}

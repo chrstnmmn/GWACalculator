@@ -4,7 +4,7 @@
 	<head>
 		<title>GWA Calculator</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/x-icon" href="./IMG/logo_favicon.png" />
+		<link rel="icon" type="image/x-icon" href="./IMG/Favicon.png" />
 
 		<!--Styles-->
 		<link rel="stylesheet" href="./CSS/style.css" />
@@ -41,47 +41,108 @@
 		<!--Main Section-->
 		<section class="contentWrapper" id="mainWrapper">
 			<div class="addCourse" id="AddCourse">
-				<div class="titleCourse">
-					<h1>Course & Grades</h1>
+				<div class="title-AddCourse">
+					<svg
+						class="icon-AddCourse"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 25 22"
+						fill="none"
+					>
+						<path
+							d="M12.5005 16.9225C12.3554 16.9225 12.2129 16.8841 12.0869 16.8109L4.79243 12.5777C4.72905 12.5405 4.65714 12.521 4.58395 12.521C4.51076 12.521 4.43887 12.5406 4.37552 12.5778C4.31216 12.615 4.25957 12.6685 4.22305 12.7329C4.18652 12.7973 4.16735 12.8704 4.16746 12.9447V16.9225C4.16733 17.0735 4.20702 17.2218 4.28239 17.352C4.35776 17.4822 4.46607 17.5896 4.59609 17.6629L12.0958 21.8935C12.2196 21.9634 12.3589 22 12.5005 22C12.6421 22 12.7814 21.9634 12.9051 21.8935L20.4049 17.6629C20.5349 17.5896 20.6432 17.4822 20.7186 17.352C20.7939 17.2218 20.8336 17.0735 20.8335 16.9225V12.9447C20.8336 12.8704 20.8144 12.7973 20.7779 12.7329C20.7414 12.6685 20.6888 12.615 20.6254 12.5778C20.5621 12.5406 20.4902 12.521 20.417 12.521C20.3438 12.521 20.2719 12.5405 20.2085 12.5777L12.914 16.8109C12.7881 16.8841 12.6455 16.9225 12.5005 16.9225Z"
+							fill="white"
+						/>
+						<path
+							d="M24.9958 7.53578V7.52996C24.9824 7.39584 24.9375 7.26693 24.865 7.15397C24.7926 7.04101 24.6946 6.94727 24.5792 6.88056L12.913 0.111537C12.787 0.0384464 12.6445 0 12.4994 0C12.3544 0 12.2118 0.0384464 12.0859 0.111537L0.419696 6.88056C0.292194 6.95458 0.186224 7.0615 0.112521 7.1905C0.0388177 7.31949 0 7.46597 0 7.6151C0 7.76424 0.0388177 7.91072 0.112521 8.03971C0.186224 8.16871 0.292194 8.27563 0.419696 8.34965L12.0859 15.1187C12.2118 15.1918 12.3544 15.2302 12.4994 15.2302C12.6445 15.2302 12.787 15.1918 12.913 15.1187L23.1772 9.16352C23.193 9.15422 23.211 9.14933 23.2293 9.14935C23.2477 9.14937 23.2656 9.15429 23.2815 9.16362C23.2973 9.17296 23.3105 9.18637 23.3196 9.2025C23.3287 9.21864 23.3335 9.23693 23.3334 9.25554V16.8987C23.3334 17.354 23.6782 17.7448 24.1266 17.7676C24.2393 17.7731 24.3519 17.7553 24.4576 17.7153C24.5633 17.6754 24.6599 17.614 24.7416 17.535C24.8232 17.456 24.8882 17.361 24.9327 17.2557C24.9771 17.1504 25 17.037 25 16.9225V7.6151C24.9999 7.58861 24.9985 7.56213 24.9958 7.53578Z"
+							fill="white"
+						/>
+					</svg>
+					<h1 class="titleCourse">Course & Grades</h1>
 				</div>
-				<div class="Courses">
-					<div class="CourseName">
-						<h2>Course name:</h2>
-						<input type="text" class="InputC" id="courseInput" />
+				<div class="Main-Card">
+					<div class="Courses">
+						<div class="CourseName">
+							<h2>Course name:</h2>
+							<input
+								type="text"
+								class="InputC"
+								id="courseInput"
+							/>
+						</div>
+						<div class="UnitsInput">
+							<h2 class="UnitsLabel">Number of units:</h2>
+							<input
+								type="text"
+								inputmode="decimal"
+								class="units"
+								id="courseUnit"
+							/>
+						</div>
 					</div>
-					<h2 class="UnitsLabel">Number of units:</h2>
-					<input type="text" inputmode="decimal" class="units" id="courseUnit" />
+					<div class="Terms">
+						<div class="terms-sub" id="prelim">
+							<h3>Prelim:</h3>
+							<input
+								type="text"
+								inputmode="decimal"
+								class="inputTerms"
+								id="prelimInput"
+							/>
+						</div>
+						<div class="terms-sub" id="midterm">
+							<h3>Midterm:</h3>
+							<input
+								type="text"
+								inputmode="decimal"
+								class="inputTerms"
+								id="midtermInput"
+							/>
+						</div>
+						<div class="terms-sub" id="prefinal">
+							<h3>Prefinal:</h3>
+							<input
+								type="text"
+								inputmode="decimal"
+								class="inputTerms"
+								id="prefinalInput"
+							/>
+						</div>
+						<div class="terms-sub" id="final">
+							<h3>Final:</h3>
+							<input
+								type="text"
+								inputmode="decimal"
+								class="inputTerms"
+								id="finalInput"
+							/>
+						</div>
+					</div>
+
+					<button
+						class="buttonAdd"
+						type="button"
+						onclick="computeOverall()"
+					>
+						<div class="add-icons">
+							<svg
+								class="button-add-icon"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 35 35"
+								fill="none"
+							>
+								<path
+									d="M33.6538 17.5C33.6538 26.4215 26.4215 33.6538 17.5 33.6538C8.57848 33.6538 1.34615 26.4215 1.34615 17.5C1.34615 8.57848 8.57848 1.34615 17.5 1.34615C26.4215 1.34615 33.6538 8.57848 33.6538 17.5Z"
+									fill="#E7C01D"
+								/>
+								<path
+									d="M17.5 0C7.8506 0 0 7.8506 0 17.5C0 27.1494 7.8506 35 17.5 35C27.1494 35 35 27.1494 35 17.5C35 7.8506 27.1494 0 17.5 0ZM24.2308 18.8462H18.8462V24.2308C18.8462 24.5878 18.7043 24.9302 18.4519 25.1826C18.1994 25.4351 17.857 25.5769 17.5 25.5769C17.143 25.5769 16.8006 25.4351 16.5481 25.1826C16.2957 24.9302 16.1538 24.5878 16.1538 24.2308V18.8462H10.7692C10.4122 18.8462 10.0698 18.7043 9.81736 18.4519C9.5649 18.1994 9.42308 17.857 9.42308 17.5C9.42308 17.143 9.5649 16.8006 9.81736 16.5481C10.0698 16.2957 10.4122 16.1538 10.7692 16.1538H16.1538V10.7692C16.1538 10.4122 16.2957 10.0698 16.5481 9.81736C16.8006 9.5649 17.143 9.42308 17.5 9.42308C17.857 9.42308 18.1994 9.5649 18.4519 9.81736C18.7043 10.0698 18.8462 10.4122 18.8462 10.7692V16.1538H24.2308C24.5878 16.1538 24.9302 16.2957 25.1826 16.5481C25.4351 16.8006 25.5769 17.143 25.5769 17.5C25.5769 17.857 25.4351 18.1994 25.1826 18.4519C24.9302 18.7043 24.5878 18.8462 24.2308 18.8462Z"
+									fill="white"
+								/>
+							</svg>
+							<h6>Add Course</h6>
+						</div>
+					</button>
 				</div>
-				<div class="terms" id="prelim">
-					<h3>Prelim:</h3>
-					<input type="text" inputmode="decimal" class="inputTerms" id="prelimInput" />
-				</div>
-				<div class="terms" id="midterm">
-					<h3>Midterm:</h3>
-					<input type="text" inputmode="decimal" class="inputTerms" id="midtermInput" />
-				</div>
-				<div class="terms" id="prefinal">
-					<h3>Prefinal:</h3>
-					<input type="text" inputmode="decimal" class="inputTerms" id="prefinalInput" />
-				</div>
-				<div class="terms" id="final">
-					<h3>Final:</h3>
-					<input type="text" inputmode="decimal" class="inputTerms" id="finalInput" />
-				</div>
-				<button
-					class="buttonDiscard"
-					type="button"
-					onclick="clearForms()"
-				>
-					Discard Course
-				</button>
-				<button
-					class="buttonAdd"
-					type="button"
-					onclick="computeOverall()"
-				>
-					Add Course
-				</button>
 			</div>
 			<div class="resultWrapper" id="viewResult" style="display: none">
 				<div class="titleResult">
@@ -91,7 +152,7 @@
 			</div>
 		</section>
 
-		<script src="./JS/Compute.js"></script>
+		<script src="./JS/index.js"></script>
 	</body>
 </html>
 

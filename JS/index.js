@@ -213,7 +213,6 @@ function removeCourse(elementId) {
 	}
 }
 
-
 // this function is for cleaning the forms
 function clearForms() {
 	document.getElementById("courseInput").value = "";

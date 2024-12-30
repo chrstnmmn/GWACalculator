@@ -73,6 +73,12 @@ button {
   border-style: none;
 }
 
+input,
+button {
+  border-style: none;
+  outline-color: #0b5793;
+}
+
 .resultWrapper {
   display: flex;
   flex-direction: column;
@@ -100,7 +106,6 @@ button {
 .resultWrapper h2,
 .resultWrapper h3,
 .resultWrapper button {
-  font-family: "Inter", serif;
   font-style: normal;
   line-height: normal;
 }
@@ -135,7 +140,6 @@ button {
   font-size: 2.25rem;
   margin-top: 0.3rem;
   text-align: center;
-  font-family: "Inter", serif;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -159,14 +163,12 @@ button {
 }
 .resultTable .termsAndGrades .terms h2 {
   color: #0b5793;
-  font-family: "Inter", serif;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
 }
 .resultTable .termsAndGrades .terms h3 {
   color: #0b5793;
-  font-family: "Inter", serif;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;

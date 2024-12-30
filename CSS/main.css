@@ -73,10 +73,19 @@ button {
   border-style: none;
 }
 
+input,
+button {
+  border-style: none;
+  outline-color: #0b5793;
+}
+
 body {
   background: url(../IMG/Pattern\ 45.png) lightgray 0% 0%/50px 50px repeat;
+  font-family: "Inter", serif;
 }
 body .contentWrapper {
+  padding-inline: 10%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

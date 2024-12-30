@@ -2,25 +2,27 @@
 
 body {
 	background: url(../IMG/Pattern\ 45.png) lightgray 0% 0% / 50px 50px repeat;
+	font-family: $Inter;
 
 	.contentWrapper {
+		padding-inline: 10%;
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		gap: 13rem;
 	}
-	
 }
 
 @media screen and (width > 700px) {
 	.contentWrapper {
-		padding-block: 10rem;	
+		padding-block: 10rem;
 	}
 }
 
 @media screen and (width < 700px) {
 	.contentWrapper {
-		padding-block: 5rem;	
+		padding-block: 5rem;
 	}
 }

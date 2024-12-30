@@ -242,7 +242,7 @@ button {
   text-align: center;
   font-size: 0.875rem;
   font-weight: 700;
-  text-wrap: nowrap;
+  white-space: nowrap;
 }
 .addCourse .Main-Card .buttonAdd:hover {
   transform: scale(1.05);
@@ -316,20 +316,19 @@ button {
     font-size: 0.75rem;
   }
   .addCourse .Main-Card .buttonAdd {
-    width: 115px;
+    width: 130px;
     height: 24px;
     margin-top: 8px;
   }
   .addCourse .Main-Card .buttonAdd .add-icons {
-    gap: 2px;
+    gap: 15px;
   }
   .addCourse .Main-Card .buttonAdd .add-icons svg {
     width: 18px;
     height: 18px;
   }
   .addCourse .Main-Card .buttonAdd .add-icons h6 {
-    width: 81px;
-    font-size: 0.675rem;
+    font-size: 0.75rem;
   }
 }
 

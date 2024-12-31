@@ -5,24 +5,12 @@ body {
 	font-family: $Inter;
 
 	.contentWrapper {
-		padding-inline: 10%;
-		width: 100%;
+		padding-block: 10rem;
+		padding-inline: 1vw;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		gap: 13rem;
-	}
-}
-
-@media screen and (width > 700px) {
-	.contentWrapper {
-		padding-block: 10rem;
-	}
-}
-
-@media screen and (width < 700px) {
-	.contentWrapper {
-		padding-block: 5rem;
 	}
 }

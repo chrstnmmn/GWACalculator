@@ -221,7 +221,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: end;
-  transition: 0.2s cubic-bezier(0.4, 0.01, 0.04, 0.88);
+  transition: 0.1s cubic-bezier(0.4, 0.01, 0.04, 0.88);
 }
 .addCourse .Main-Card .buttonAdd .add-icons {
   display: flex;
@@ -229,13 +229,13 @@ button {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  transition: transform 0.2s cubic-bezier(0.4, 0.01, 0.04, 0.88);
+  transition: transform 0.1s cubic-bezier(0.4, 0.01, 0.04, 0.88);
 }
 .addCourse .Main-Card .buttonAdd .add-icons svg {
   width: 23px;
   height: 23px;
   transform: rotate(0deg);
-  transition: transform 0.2s cubic-bezier(0.4, 0.01, 0.04, 0.88);
+  transition: transform 0.1s cubic-bezier(0.4, 0.01, 0.04, 0.88);
 }
 .addCourse .Main-Card .buttonAdd .add-icons h6 {
   color: #ffffff;
@@ -316,14 +316,16 @@ button {
     font-size: 0.75rem;
   }
   .addCourse .Main-Card .buttonAdd {
-    width: 130px;
+    width: 115px;
     height: 24px;
+    justify-content: center;
     margin-top: 8px;
   }
   .addCourse .Main-Card .buttonAdd .add-icons {
     gap: 15px;
   }
   .addCourse .Main-Card .buttonAdd .add-icons svg {
+    display: none;
     width: 18px;
     height: 18px;
   }

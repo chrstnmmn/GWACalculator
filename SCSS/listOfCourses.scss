@@ -1,173 +1,276 @@
 @import "style.scss";
 
 .resultWrapper {
-	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: center;
-	gap: 3em;
+	align-items: center;
 
-	.tableWrapper {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: center;
-		gap: 37px;
-	}
+	.titleResult {
+		width: 594px;
 
-	.titleResult,
-	.tableTitle,
-	.terms,
-	.overAllGrade,
-	button {
 		border-radius: $Radius;
+		background: $Accent02;
 		box-shadow: $Box_Shadow;
-	}
 
-	h1,
-	h2,
-	h3,
-	button {
-		font-style: normal;
-		line-height: normal;
-	}
-}
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 7px;
 
-.titleResult {
-	width: 618px;
-	height: 57px;
-	background: $Accent02;
-	h1 {
-		color: $Main;
-		font-size: 2.25rem;
-		margin-top: 0.3rem;
-		text-align: center;
-		font-weight: 700;
-	}
-}
+		margin-bottom: 18px;
+		user-select: none;
+		pointer-events: none;
 
-.resultTable {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 0.75em;
-	.tableTitle {
-		width: 618px;
-		height: 62px;
-		background: $Main;
-		h2 {
-			color: $Accent02;
-			font-size: 2.25rem;
-			margin-top: 0.3rem;
+		.result-icon-title {
+			width: 23.395px;
+			height: 21.875px;
+		}
+		h1 {
+			color: $Main;
 			text-align: center;
-			font-style: normal;
-			font-weight: 700;
-			line-height: normal;
-			padding-top: 5px;
+			font-size: 1.5rem;
+			font-weight: 800;
+			padding-block: 0.3em;
 		}
 	}
-	.termsAndGrades {
+	.tableWrapper {
 		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		gap: 18px;
-		.terms {
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 16px;
+		.resultTable {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			align-items: flex-start;
-			padding-inline: 20px;
-			width: 141px;
-			height: 94px;
-			background: $Main;
-			h2 {
-				color: $Accent02;
-				font-size: 1.5rem;
-				font-style: normal;
-				font-weight: 700;
+			align-items: center;
+			flex-wrap: wrap;
+
+			gap: 10px;
+			.tableTitle {
+				width: 510px;
+
+				user-select: none;
+				pointer-events: none;
+
+				h2 {
+					border-radius: $Radius;
+					background: $Main;
+					box-shadow: $Box_Shadow;
+
+					color: $Accent02;
+					text-align: center;
+					font-size: 1.5rem;
+					font-weight: 800;
+					padding-block: 0.3em;
+				}
 			}
-			h3 {
-				color: $Accent02;
-				font-size: 1.5rem;
-				font-style: normal;
-				font-weight: 400;
-				line-height: normal;
+			.termsAndGrades {
+				width: 510px;
+
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				user-select: none;
+				pointer-events: none;
+
+				.terms {
+					width: 120px;
+
+					border-radius: $Radius;
+					background: $Main;
+					box-shadow: $Box_Shadow;
+
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: start;
+					gap: 0px;
+
+					padding-inline: 14px;
+					padding-block: 0.8em;
+
+					h2 {
+						color: $Accent02;
+						font-size: 1.25rem;
+						font-weight: 700;
+					}
+					h3 {
+						color: $Accent02;
+						font-size: 1.25rem;
+						font-weight: 500;
+						line-height: 120.992%; /* 1.51238rem */
+					}
+				}
+			}
+			.overAllGrade {
+				width: 510px;
+
+				border-radius: $Radius;
+				background: $Main;
+				box-shadow: $Box_Shadow;
+
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				padding-inline: 14px;
+				user-select: none;
+				pointer-events: none;
+
+				h2 {
+					color: $Accent02;
+					font-size: 1.25rem;
+					font-weight: 700;
+					padding-block: 0.2em;
+				}
+			}
+			.RemoveCourseButton {
+				align-self: flex-end;
+
+				width: 115px;
+				height: 31px;
+
+				border-radius: 30px;
+				background: $Accent01;
+				box-shadow: $Box_Shadow;
+
+				display: flex;
+				align-items: center;
+				justify-content: end;
+
+				.remove-Icon {
+					display: flex;
+					flex-direction: row-reverse;
+					justify-content: center;
+					align-items: center;
+					gap: 10px;
+
+					transition: transform $transition;
+
+					svg {
+						width: 23px;
+						height: 23px;
+						transform: rotate(0deg);
+						transition: transform $transition;
+					}
+
+					h6 {
+						color: $Main;
+						text-align: center;
+						font-size: 0.875rem;
+						font-weight: 700;
+						white-space: nowrap;
+
+						user-select: none;
+						pointer-events: none;
+					}
+				}
+				&:hover {
+					transform: scale(1.05);
+
+					cursor: pointer;
+					svg {
+						transform: rotate(180deg);
+					}
+				}
+				&:active {
+					transform: scale(0.9);
+					svg {
+						transform: rotate(0deg);
+					}
+				}
 			}
 		}
-	}
-	.overAllGrade {
-		width: 618px;
-		height: 62px;
-		background: $Main;
-		display: flex;
-		justify-content: space-around;
-		gap: 10em;
-		h2 {
-			color: $Accent02;
-			font-size: 2rem;
-			margin-top: 0.3rem;
-			text-align: end;
-			font-weight: 700;
-			padding-top: 5px;
-		}
-	}
-	button {
-		align-self: flex-end;
-		width: 210px;
-		height: 44px;
-		background: $Accent01;
-		color: $Main;
-		font-size: 1.5rem;
-		margin-top: 0.3rem;
-		text-align: center;
-		font-weight: 700;
 	}
 }
 
 @media screen and (width < 700px) {
 	.resultWrapper {
-		.tableWrapper {
-			flex-direction: column;
-		}
 		.titleResult {
-			width: 320px;
-		}
+			width: 280px;
 
-		.tableTitle {
-			width: 320px;
-			h2 {
-				font-size: 1.25rem;
-				padding-top: 12px;
+			.result-icon-title {
+				width: 17px;
+				height: 14px;
+			}
+			h1 {
+				font-size: 1rem;
+				font-weight: 700;
+				padding-block: 0.2em;
 			}
 		}
-		.termsAndGrades {
-			flex-direction: column;
-			gap: 10px;
-			.terms {
-				width: 320px;
-				height: 43px;
+		.tableWrapper {
+			.resultTable {
+				gap: 6px;
 
-				flex-direction: row;
-				justify-content: space-between;
-				align-content: center;
-				padding-inline: 30px;
-				padding-top: 6px;
+				.tableTitle {
+					width: 294px;
+
+					h2 {
+						font-size: 1rem;
+						padding-block: 0.3em;
+					}
+				}
+				.termsAndGrades {
+					width: 294px;
+
+					flex-wrap: wrap;
+					justify-content: center;
+					align-items: center;
+					gap: 6px;
+
+					.terms {
+						width: 144px;
+
+						flex-direction: row;
+						justify-content: space-between;
+						align-items: center;
+
+						padding-inline: 12px;
+						padding-block: 0.3em;
+
+						h2 {
+							font-size: 1rem;
+						}
+						h3 {
+							font-size: 0.875rem;
+							font-weight: 600;
+						}
+					}
+				}
+				.overAllGrade {
+					width: 294px;
+
+					padding-inline: 10px;
+
+					h2 {
+						font-size: 1rem;
+					}
+				}
+				.RemoveCourseButton {
+					width: 90px;
+					height: 24px;
+
+					justify-content: center;
+
+					margin-top: 4px;
+
+					.remove-Icon {
+						gap: 15px;
+
+						svg {
+							display: none;
+							width: 18px;
+							height: 18px;
+						}
+						h6 {
+							font-size: 0.75rem;
+						}
+					}
+				}
 			}
-		}
-		.overAllGrade {
-			gap: 0em;
-			width: 320px;
-			h2 {
-				font-size: 1.5rem;
-				padding-top: 10px;
-			}
-		}
-		button {
-			width: 193px;
-			font-size: 1.25rem;
-      
 		}
 	}
 }

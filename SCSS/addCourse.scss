@@ -282,8 +282,10 @@
 				}
 			}
 			.buttonAdd {
-				width: 130px;
+				width: 115px;
 				height: 24px;
+
+				justify-content: center;
 
 				margin-top: 8px;
 
@@ -291,6 +293,7 @@
 					gap: 15px;
 
 					svg {
+						display: none;
 						width: 18px;
 						height: 18px;
 					}

@@ -80,166 +80,230 @@ button {
 }
 
 .resultWrapper {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 3em;
+  align-items: center;
+}
+.resultWrapper .titleResult {
+  width: 594px;
+  border-radius: 10px;
+  background: #0b5793;
+  box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 18px;
+  user-select: none;
+  pointer-events: none;
+}
+.resultWrapper .titleResult .result-icon-title {
+  width: 23.395px;
+  height: 21.875px;
+}
+.resultWrapper .titleResult h1 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  padding-block: 0.3em;
 }
 .resultWrapper .tableWrapper {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 37px;
+  gap: 16px;
 }
-.resultWrapper .titleResult,
-.resultWrapper .tableTitle,
-.resultWrapper .terms,
-.resultWrapper .overAllGrade,
-.resultWrapper button {
+.resultWrapper .tableWrapper .resultTable {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.resultWrapper .tableWrapper .resultTable .tableTitle {
+  width: 510px;
+  user-select: none;
+  pointer-events: none;
+}
+.resultWrapper .tableWrapper .resultTable .tableTitle h2 {
   border-radius: 10px;
+  background: #ffffff;
   box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
-}
-.resultWrapper h1,
-.resultWrapper h2,
-.resultWrapper h3,
-.resultWrapper button {
-  font-style: normal;
-  line-height: normal;
-}
-
-.titleResult {
-  width: 618px;
-  height: 57px;
-  background: #0b5793;
-}
-.titleResult h1 {
-  color: #ffffff;
-  font-size: 2.25rem;
-  margin-top: 0.3rem;
-  text-align: center;
-  font-weight: 700;
-}
-
-.resultTable {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75em;
-}
-.resultTable .tableTitle {
-  width: 618px;
-  height: 62px;
-  background: #ffffff;
-}
-.resultTable .tableTitle h2 {
   color: #0b5793;
-  font-size: 2.25rem;
-  margin-top: 0.3rem;
   text-align: center;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  padding-top: 5px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  padding-block: 0.3em;
 }
-.resultTable .termsAndGrades {
+.resultWrapper .tableWrapper .resultTable .termsAndGrades {
+  width: 510px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  gap: 18px;
+  align-items: center;
+  user-select: none;
+  pointer-events: none;
 }
-.resultTable .termsAndGrades .terms {
+.resultWrapper .tableWrapper .resultTable .termsAndGrades .terms {
+  width: 120px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  padding-inline: 20px;
-  width: 141px;
-  height: 94px;
-  background: #ffffff;
+  align-items: start;
+  gap: 0px;
+  padding-inline: 14px;
+  padding-block: 0.8em;
 }
-.resultTable .termsAndGrades .terms h2 {
+.resultWrapper .tableWrapper .resultTable .termsAndGrades .terms h2 {
   color: #0b5793;
-  font-size: 1.5rem;
-  font-style: normal;
+  font-size: 1.25rem;
   font-weight: 700;
 }
-.resultTable .termsAndGrades .terms h3 {
+.resultWrapper .tableWrapper .resultTable .termsAndGrades .terms h3 {
   color: #0b5793;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 120.992%; /* 1.51238rem */
 }
-.resultTable .overAllGrade {
-  width: 618px;
-  height: 62px;
+.resultWrapper .tableWrapper .resultTable .overAllGrade {
+  width: 510px;
+  border-radius: 10px;
   background: #ffffff;
+  box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-around;
-  gap: 10em;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 14px;
+  user-select: none;
+  pointer-events: none;
 }
-.resultTable .overAllGrade h2 {
+.resultWrapper .tableWrapper .resultTable .overAllGrade h2 {
   color: #0b5793;
-  font-size: 2rem;
-  margin-top: 0.3rem;
-  text-align: end;
+  font-size: 1.25rem;
   font-weight: 700;
-  padding-top: 5px;
+  padding-block: 0.2em;
 }
-.resultTable button {
+.resultWrapper .tableWrapper .resultTable .RemoveCourseButton {
   align-self: flex-end;
-  width: 210px;
-  height: 44px;
+  width: 115px;
+  height: 31px;
+  border-radius: 30px;
   background: #e7c01d;
+  box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.resultWrapper .tableWrapper .resultTable .RemoveCourseButton .remove-Icon {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.1s cubic-bezier(0.4, 0.01, 0.04, 0.88);
+}
+.resultWrapper .tableWrapper .resultTable .RemoveCourseButton .remove-Icon svg {
+  width: 23px;
+  height: 23px;
+  transform: rotate(0deg);
+  transition: transform 0.1s cubic-bezier(0.4, 0.01, 0.04, 0.88);
+}
+.resultWrapper .tableWrapper .resultTable .RemoveCourseButton .remove-Icon h6 {
   color: #ffffff;
-  font-size: 1.5rem;
-  margin-top: 0.3rem;
   text-align: center;
+  font-size: 0.875rem;
   font-weight: 700;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+.resultWrapper .tableWrapper .resultTable .RemoveCourseButton:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.resultWrapper .tableWrapper .resultTable .RemoveCourseButton:hover svg {
+  transform: rotate(180deg);
+}
+.resultWrapper .tableWrapper .resultTable .RemoveCourseButton:active {
+  transform: scale(0.9);
+}
+.resultWrapper .tableWrapper .resultTable .RemoveCourseButton:active svg {
+  transform: rotate(0deg);
 }
 
 @media screen and (width < 700px) {
-  .resultWrapper .tableWrapper {
-    flex-direction: column;
-  }
   .resultWrapper .titleResult {
-    width: 320px;
+    width: 280px;
   }
-  .resultWrapper .tableTitle {
-    width: 320px;
+  .resultWrapper .titleResult .result-icon-title {
+    width: 17px;
+    height: 14px;
   }
-  .resultWrapper .tableTitle h2 {
-    font-size: 1.25rem;
-    padding-top: 12px;
+  .resultWrapper .titleResult h1 {
+    font-size: 1rem;
+    font-weight: 700;
+    padding-block: 0.2em;
   }
-  .resultWrapper .termsAndGrades {
-    flex-direction: column;
-    gap: 10px;
+  .resultWrapper .tableWrapper .resultTable {
+    gap: 6px;
   }
-  .resultWrapper .termsAndGrades .terms {
-    width: 320px;
-    height: 43px;
+  .resultWrapper .tableWrapper .resultTable .tableTitle {
+    width: 294px;
+  }
+  .resultWrapper .tableWrapper .resultTable .tableTitle h2 {
+    font-size: 1rem;
+    padding-block: 0.3em;
+  }
+  .resultWrapper .tableWrapper .resultTable .termsAndGrades {
+    width: 294px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+  .resultWrapper .tableWrapper .resultTable .termsAndGrades .terms {
+    width: 144px;
     flex-direction: row;
     justify-content: space-between;
-    align-content: center;
-    padding-inline: 30px;
-    padding-top: 6px;
+    align-items: center;
+    padding-inline: 12px;
+    padding-block: 0.3em;
   }
-  .resultWrapper .overAllGrade {
-    gap: 0em;
-    width: 320px;
+  .resultWrapper .tableWrapper .resultTable .termsAndGrades .terms h2 {
+    font-size: 1rem;
   }
-  .resultWrapper .overAllGrade h2 {
-    font-size: 1.5rem;
-    padding-top: 10px;
+  .resultWrapper .tableWrapper .resultTable .termsAndGrades .terms h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
   }
-  .resultWrapper button {
-    width: 193px;
-    font-size: 1.25rem;
+  .resultWrapper .tableWrapper .resultTable .overAllGrade {
+    width: 294px;
+    padding-inline: 10px;
+  }
+  .resultWrapper .tableWrapper .resultTable .overAllGrade h2 {
+    font-size: 1rem;
+  }
+  .resultWrapper .tableWrapper .resultTable .RemoveCourseButton {
+    width: 90px;
+    height: 24px;
+    justify-content: center;
+    margin-top: 4px;
+  }
+  .resultWrapper .tableWrapper .resultTable .RemoveCourseButton .remove-Icon {
+    gap: 15px;
+  }
+  .resultWrapper .tableWrapper .resultTable .RemoveCourseButton .remove-Icon svg {
+    display: none;
+    width: 18px;
+    height: 18px;
+  }
+  .resultWrapper .tableWrapper .resultTable .RemoveCourseButton .remove-Icon h6 {
+    font-size: 0.75rem;
   }
 }
 

@@ -91,6 +91,7 @@ function computeOverall() {
 		final,
 		overall
 	);
+	GradingSystemAndGWA(overall, courseUnit);
 	clearForms(); // making sure that the forms are clean after getting the input}
 }
 
@@ -217,7 +218,10 @@ function GenerateResultSection(
 	];
 
 	paths.forEach(({ d, fill }) => {
-		const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+		const path = document.createElementNS(
+			"http://www.w3.org/2000/svg",
+			"path"
+		);
 		path.setAttribute("d", d);
 		path.setAttribute("fill", fill);
 		svg.appendChild(path);
@@ -262,6 +266,54 @@ function removeCourse(elementId) {
 		document.getElementById("viewResult").style.display = "none";
 	}
 }
+
+// function computeGWA(courseName, overall, ) {
+
+// }
+
+function GradingSystemAndGWA(overall, courseUnit) {
+	console.log(overall);
+	let gradingSystemResult = 0;
+
+	if (overall >= 97.5 && overall <= 100) {
+		console.log("Excellent");
+		gradingSystemResult = 1.0;
+	} else if (overall >= 88.5 && overall <= 97.49) {
+		console.log("Very Good");
+
+		if (overall >= 88.5 && overall <= 91.49) {
+			gradingSystemResult = 1.75;
+		} else if (overall >= 91.5 && overall <= 94.49) {
+			gradingSystemResult = 1.5;
+		} else if (overall >= 94.5 && overall <= 97.49) {
+			gradingSystemResult = 1.25;
+		}
+	} else if (overall >= 77.5 && overall <= 88.49) {
+		console.log("Satisfactory");
+
+		if (overall >= 77.5 && overall <= 81.49) {
+			gradingSystemResult = 2.5;
+		} else if (overall >= 81.5 && overall <= 85.49) {
+			gradingSystemResult = 2.25;
+		} else if (overall >= 85.5 && overall <= 88.49) {
+			gradingSystemResult = 2.0;
+		}
+	} else if (overall >= 69.5 && overall <= 73.49) {
+		console.log("Fair");
+		gradingSystemResult = 3.0;
+	} else if (overall <= 69.49) {
+		console.log("Failed");
+		gradingSystemResult = 5.0;
+	} else {
+		console.log("Invalid Grade Result");
+		gradingSystemResult = 0;
+	}
+	console.log(gradingSystemResult.toFixed(2));
+
+	const CreditScore = courseUnit * gradingSystemResult;
+	console.log("Credit Score: " + CreditScore);
+}
+
 
 // this function is for cleaning the forms
 function clearForms() {

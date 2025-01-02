@@ -15,7 +15,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 7px;
+		gap: 6px;
 
 		margin-bottom: 18px;
 		user-select: none;
@@ -24,6 +24,10 @@
 		.result-icon-title {
 			width: 23.395px;
 			height: 21.875px;
+		}
+		svg {
+			width: 24px;
+			height: 22px;
 		}
 		h1 {
 			color: $Main;
@@ -195,6 +199,10 @@
 				width: 17px;
 				height: 14px;
 			}
+			svg {
+				width: 17px;
+				height: 14px;
+			}
 			h1 {
 				font-size: 1rem;
 				font-weight: 700;
@@ -254,6 +262,7 @@
 					height: 24px;
 
 					justify-content: center;
+					border-radius: 10px;
 
 					margin-top: 4px;
 

@@ -81,7 +81,6 @@ button {
 
 header {
   max-width: auto;
-  height: 88px;
   flex-shrink: 0;
   position: sticky;
   z-index: 100;
@@ -98,6 +97,8 @@ header {
 header .button_links {
   display: flex;
   flex-direction: row;
+  justify-content: end;
+  align-items: center;
   gap: 43px;
 }
 header .logo {
@@ -110,37 +111,36 @@ header a {
   font-weight: 700;
   line-height: normal;
   text-decoration: none;
+  padding-block: 1.2em;
 }
 
 @media screen and (width < 1000px) {
   header {
     border-top: 8px solid #e7c01d;
-    height: 66.344px;
   }
   header .logo {
     max-width: 8rem;
+  }
+  header a {
+    padding-block: 0.8em;
   }
 }
 @media screen and (width < 700px) {
   header {
     border-top: 6px solid #e7c01d;
     background: #0b5793;
-    box-shadow: 0px 23px 0px 0px #ffffff, 0px 28px 0px 0px #0b5793, 0px 31px 0px 0px #e7c01d, 0px 33px 20.6px 0px rgba(0, 0, 0, 0.15);
-    height: 45px;
-    flex-direction: column;
-    justify-content: start;
+    box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
     align-items: center;
     padding-block: 8px;
     gap: 12px;
   }
   header .button_links {
-    height: 23px;
-    gap: 23px;
+    gap: 15px;
   }
   header .button_links a {
-    font-size: 0.75rem;
+    font-size: 0.625rem;
     font-weight: 600;
-    color: #0b5793;
+    padding-block: 0.6em;
   }
   header .logo {
     align-self: center;

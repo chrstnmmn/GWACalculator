@@ -2,27 +2,42 @@
 let items = [];
 let itemCount = 0;
 let indexPosition = 0;
-let Remarks = 0;
-let CreditScore = 0;
 
 const AddButton = document.getElementById("AddCourseButton");
 AddButton.addEventListener("click", () => {
-	CumulativeGrades();
+	getTheDOMElement();
+	computeOverall();
 });
 
+// Global variables
+const userInputValue = new Object();
+
+function getTheDOMElement() {
+	// getting the value from the user input
+	userInputValue.courseName = document.getElementById("courseInput").value;
+	userInputValue.courseUnit = parseFloat(
+		document.getElementById("courseUnit").value
+	);
+	userInputValue.prelim = parseFloat(
+		document.getElementById("prelimInput").value
+	);
+	userInputValue.midterm = parseFloat(
+		document.getElementById("midtermInput").value
+	);
+	userInputValue.prefinal = parseFloat(
+		document.getElementById("prefinalInput").value
+	);
+	userInputValue.final = parseFloat(
+		document.getElementById("finalInput").value
+	);
+}
+
 // this function will be called to compute the average of the grades from prelim to finals
-function CumulativeGrades() {
+function computeOverall() {
 	// initializing a random number that will be used as unique id for each index inside
 	// the array, so that every id is uniquely generated and to ensure the there won't
 	// be any conflict when removing an index inside the array
 	const elementId = Date.now();
-
-	const courseName = document.getElementById("courseInput").value;
-	const courseUnit = parseFloat(document.getElementById("courseUnit").value);
-	const prelim = parseFloat(document.getElementById("prelimInput").value);
-	const midterm = parseFloat(document.getElementById("midtermInput").value);
-	const prefinal = parseFloat(document.getElementById("prefinalInput").value);
-	const final = parseFloat(document.getElementById("finalInput").value);
 
 	// this is the percentage the is going to use as a multiplier
 	const Percent = {
@@ -32,11 +47,11 @@ function CumulativeGrades() {
 
 	// validating if the user is only putting numbers and not strings
 	if (
-		isNaN(prelim) ||
-		isNaN(midterm) ||
-		isNaN(prefinal) ||
-		isNaN(final) ||
-		isNaN(courseUnit)
+		isNaN(userInputValue.prelim) ||
+		isNaN(userInputValue.midterm) ||
+		isNaN(userInputValue.prefinal) ||
+		isNaN(userInputValue.final) ||
+		isNaN(userInputValue.courseUnit)
 	) {
 		alert("Invalid Input");
 		console.log("Invalid input");
@@ -48,38 +63,34 @@ function CumulativeGrades() {
 	// as ya'll see prelim to prefinal uses 20% while the finals uses 40%
 	// this equivalent to 100%, based on our grading system this is how to compute it
 	const ComputeTotal = {
-		total1: prelim * Percent.microPercent,
-		total2: midterm * Percent.microPercent,
-		total3: prefinal * Percent.microPercent,
-		total4: final * Percent.macroPercent,
+		total1: userInputValue.prelim * Percent.microPercent,
+		total2: userInputValue.midterm * Percent.microPercent,
+		total3: userInputValue.prefinal * Percent.microPercent,
+		total4: userInputValue.final * Percent.macroPercent,
 	};
 	// after getting the percentage, the next step is getting the sum of all the values
 	// the answer is the total average on that course
-	let cumulativeGrade =
+	const overall =
 		ComputeTotal.total1 +
 		ComputeTotal.total2 +
 		ComputeTotal.total3 +
 		ComputeTotal.total4;
-	cumulativeGrade = cumulativeGrade.toFixed(2);
+
 	// storing the course detail based from the user to the array for data management
 	// also this is later gonna be used for computing the overall GWA
-
-	items.push({
-		elementId,
-		courseName,
-		prelim,
-		midterm,
-		prefinal,
-		final,
-		cumulativeGrade,
-	});
+	items
+		.push({
+			elementId,
+			userInputValue,
+			overall,
+		})
+		.toFixed(2);
 	for (let i = 0; i < items.length; i++) {
 		itemCount = items.length;
 		indexPosition = itemCount;
 		console.log("Item added: " + itemCount);
 		console.log("Index position of: " + indexPosition);
 		console.log(items);
-		TranscriptionOfRecords(cumulativeGrade, courseUnit);
 
 		// if the item inside the array is not emtpy, it will show the result section
 		if (itemCount > 0) {
@@ -91,61 +102,20 @@ function CumulativeGrades() {
 			});
 		}
 	}
-	CreateCourseCatalog(
+	GenerateResultSection(
 		elementId,
-		courseName,
-		prelim,
-		midterm,
-		prefinal,
-		final,
-		cumulativeGrade
+		userInputValue.courseName,
+		userInputValue.prelim,
+		userInputValue.midterm,
+		userInputValue.prefinal,
+		userInputValue.final,
+		overall
 	);
+	RemarksAndCredits(overall, userInputValue.courseUnit);
 	clearForms(); // making sure that the forms are clean after getting the input}
 }
 
-function TranscriptionOfRecords(overall, courseUnit) {
-	console.log(overall);
-
-	if (overall >= 97.5 && overall <= 100) {
-		console.log("Excellent");
-		Remarks = 1.0;
-	} else if (overall >= 88.5 && overall <= 97.49) {
-		console.log("Very Good");
-
-		if (overall >= 88.5 && overall <= 91.49) {
-			Remarks = 1.75;
-		} else if (overall >= 91.5 && overall <= 94.49) {
-			Remarks = 1.5;
-		} else if (overall >= 94.5 && overall <= 97.49) {
-			Remarks = 1.25;
-		}
-	} else if (overall >= 77.5 && overall <= 88.49) {
-		console.log("Satisfactory");
-
-		if (overall >= 77.5 && overall <= 81.49) {
-			Remarks = 2.5;
-		} else if (overall >= 81.5 && overall <= 85.49) {
-			Remarks = 2.25;
-		} else if (overall >= 85.5 && overall <= 88.49) {
-			Remarks = 2.0;
-		}
-	} else if (overall >= 69.5 && overall <= 73.49) {
-		console.log("Fair");
-		Remarks = 3.0;
-	} else if (overall <= 69.49) {
-		console.log("Failed");
-		Remarks = 5.0;
-	} else {
-		console.log("Invalid Grade Result");
-		Remarks = 0;
-	}
-	console.log(Remarks.toFixed(2));
-
-	CreditScore = courseUnit * Remarks;
-	console.log("Credit Score: " + CreditScore);
-}
-
-function CreateCourseCatalog(
+function GenerateResultSection(
 	elementId,
 	courseName,
 	prelim,
@@ -215,11 +185,11 @@ function CreateCourseCatalog(
 	const overAllGrade = document.createElement("div");
 	overAllGrade.className = "overAllGrade";
 	const overAllh2 = document.createElement("h2");
-	overAllh2.textContent = "Cumulative Grade";
+	overAllh2.textContent = "Overall grade";
 	overAllGrade.appendChild(overAllh2);
 	const overAllResult = document.createElement("h2");
 	overAllResult.id = "overAllResult";
-	overAllResult.textContent = overall;
+	overAllResult.textContent = overall.toFixed(2);
 	overAllGrade.appendChild(overAllResult);
 
 	// creating the remove course button
@@ -315,6 +285,49 @@ function removeCourse(elementId) {
 	if (items.length === 0) {
 		document.getElementById("viewResult").style.display = "none";
 	}
+}
+
+function RemarksAndCredits(overall, courseUnit) {
+	console.log(overall);
+	let gradingSystemResult = 0;
+
+	if (overall >= 97.5 && overall <= 100) {
+		console.log("Excellent");
+		gradingSystemResult = 1.0;
+	} else if (overall >= 88.5 && overall <= 97.49) {
+		console.log("Very Good");
+
+		if (overall >= 88.5 && overall <= 91.49) {
+			gradingSystemResult = 1.75;
+		} else if (overall >= 91.5 && overall <= 94.49) {
+			gradingSystemResult = 1.5;
+		} else if (overall >= 94.5 && overall <= 97.49) {
+			gradingSystemResult = 1.25;
+		}
+	} else if (overall >= 77.5 && overall <= 88.49) {
+		console.log("Satisfactory");
+
+		if (overall >= 77.5 && overall <= 81.49) {
+			gradingSystemResult = 2.5;
+		} else if (overall >= 81.5 && overall <= 85.49) {
+			gradingSystemResult = 2.25;
+		} else if (overall >= 85.5 && overall <= 88.49) {
+			gradingSystemResult = 2.0;
+		}
+	} else if (overall >= 69.5 && overall <= 73.49) {
+		console.log("Fair");
+		gradingSystemResult = 3.0;
+	} else if (overall <= 69.49) {
+		console.log("Failed");
+		gradingSystemResult = 5.0;
+	} else {
+		console.log("Invalid Grade Result");
+		gradingSystemResult = 0;
+	}
+	console.log(gradingSystemResult.toFixed(2));
+
+	const CreditScore = courseUnit * gradingSystemResult;
+	console.log("Credit Score: " + CreditScore);
 }
 
 // this function is for cleaning the forms

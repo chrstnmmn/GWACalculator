@@ -1,151 +1,4 @@
-// initializing variables
-let items = [];
-let itemCount = 0;
-let indexPosition = 0;
-let Remarks = 0;
-let CreditScore = 0;
-
-const AddButton = document.getElementById("AddCourseButton");
-AddButton.addEventListener("click", () => {
-	CumulativeGrades();
-});
-
-// this function will be called to compute the average of the grades from prelim to finals
-function CumulativeGrades() {
-	// initializing a random number that will be used as unique id for each index inside
-	// the array, so that every id is uniquely generated and to ensure the there won't
-	// be any conflict when removing an index inside the array
-	const elementId = Date.now();
-
-	const courseName = document.getElementById("courseInput").value;
-	const courseUnit = parseFloat(document.getElementById("courseUnit").value);
-	const prelim = parseFloat(document.getElementById("prelimInput").value);
-	const midterm = parseFloat(document.getElementById("midtermInput").value);
-	const prefinal = parseFloat(document.getElementById("prefinalInput").value);
-	const final = parseFloat(document.getElementById("finalInput").value);
-
-	// this is the percentage the is going to use as a multiplier
-	const Percent = {
-		microPercent: 0.2,
-		macroPercent: 0.4,
-	};
-
-	// validating if the user is only putting numbers and not strings
-	if (
-		isNaN(prelim) ||
-		isNaN(midterm) ||
-		isNaN(prefinal) ||
-		isNaN(final) ||
-		isNaN(courseUnit)
-	) {
-		alert("Invalid Input");
-		console.log("Invalid input");
-		clearForms();
-		return; // Exit the function if validation fails
-	}
-
-	// here are the formula for computing the grades
-	// as ya'll see prelim to prefinal uses 20% while the finals uses 40%
-	// this equivalent to 100%, based on our grading system this is how to compute it
-	const ComputeTotal = {
-		total1: prelim * Percent.microPercent,
-		total2: midterm * Percent.microPercent,
-		total3: prefinal * Percent.microPercent,
-		total4: final * Percent.macroPercent,
-	};
-	// after getting the percentage, the next step is getting the sum of all the values
-	// the answer is the total average on that course
-	let cumulativeGrade =
-		ComputeTotal.total1 +
-		ComputeTotal.total2 +
-		ComputeTotal.total3 +
-		ComputeTotal.total4;
-	cumulativeGrade = cumulativeGrade.toFixed(2);
-	// storing the course detail based from the user to the array for data management
-	// also this is later gonna be used for computing the overall GWA
-
-	items.push({
-		elementId,
-		courseName,
-		prelim,
-		midterm,
-		prefinal,
-		final,
-		cumulativeGrade,
-	});
-	for (let i = 0; i < items.length; i++) {
-		itemCount = items.length;
-		indexPosition = itemCount;
-		console.log("Item added: " + itemCount);
-		console.log("Index position of: " + indexPosition);
-		console.log(items);
-		TranscriptionOfRecords(cumulativeGrade, courseUnit);
-
-		// if the item inside the array is not emtpy, it will show the result section
-		if (itemCount > 0) {
-			document.getElementById("viewResult").style.display = "flex";
-			viewResult.scrollIntoView({
-				behavior: "smooth",
-				block: "start",
-				inline: "center",
-			});
-		}
-	}
-	CreateCourseCatalog(
-		elementId,
-		courseName,
-		prelim,
-		midterm,
-		prefinal,
-		final,
-		cumulativeGrade
-	);
-	clearForms(); // making sure that the forms are clean after getting the input}
-}
-
-function TranscriptionOfRecords(overall, courseUnit) {
-	console.log(overall);
-
-	if (overall >= 97.5 && overall <= 100) {
-		console.log("Excellent");
-		Remarks = 1.0;
-	} else if (overall >= 88.5 && overall <= 97.49) {
-		console.log("Very Good");
-
-		if (overall >= 88.5 && overall <= 91.49) {
-			Remarks = 1.75;
-		} else if (overall >= 91.5 && overall <= 94.49) {
-			Remarks = 1.5;
-		} else if (overall >= 94.5 && overall <= 97.49) {
-			Remarks = 1.25;
-		}
-	} else if (overall >= 77.5 && overall <= 88.49) {
-		console.log("Satisfactory");
-
-		if (overall >= 77.5 && overall <= 81.49) {
-			Remarks = 2.5;
-		} else if (overall >= 81.5 && overall <= 85.49) {
-			Remarks = 2.25;
-		} else if (overall >= 85.5 && overall <= 88.49) {
-			Remarks = 2.0;
-		}
-	} else if (overall >= 69.5 && overall <= 73.49) {
-		console.log("Fair");
-		Remarks = 3.0;
-	} else if (overall <= 69.49) {
-		console.log("Failed");
-		Remarks = 5.0;
-	} else {
-		console.log("Invalid Grade Result");
-		Remarks = 0;
-	}
-	console.log(Remarks.toFixed(2));
-
-	CreditScore = courseUnit * Remarks;
-	console.log("Credit Score: " + CreditScore);
-}
-
-function CreateCourseCatalog(
+function GenerateResultSection(
 	elementId,
 	courseName,
 	prelim,
@@ -215,16 +68,17 @@ function CreateCourseCatalog(
 	const overAllGrade = document.createElement("div");
 	overAllGrade.className = "overAllGrade";
 	const overAllh2 = document.createElement("h2");
-	overAllh2.textContent = "Cumulative Grade";
+	overAllh2.textContent = "Overall grade";
 	overAllGrade.appendChild(overAllh2);
 	const overAllResult = document.createElement("h2");
 	overAllResult.id = "overAllResult";
-	overAllResult.textContent = overall;
+	overAllResult.textContent = overall.toFixed(2);
 	overAllGrade.appendChild(overAllResult);
 
 	// creating the remove course button
 	const RemoveCourseButton = document.createElement("button");
 	RemoveCourseButton.className = "RemoveCourseButton";
+	RemoveCourseButton.id = "RemoveButton";
 	RemoveCourseButton.type = "button";
 	// RemoveCourseButton.textContent = "Remove";
 	RemoveCourseButton.onclick = function () {
@@ -317,13 +171,4 @@ function removeCourse(elementId) {
 	}
 }
 
-// this function is for cleaning the forms
-function clearForms() {
-	document.getElementById("courseInput").value = "";
-	document.getElementById("courseUnit").value = "";
-	document.getElementById("prelimInput").value = "";
-	document.getElementById("midtermInput").value = "";
-	document.getElementById("prefinalInput").value = "";
-	document.getElementById("finalInput").value = "";
-	console.log("Item Cleared");
-}
+export { GenerateResultSection };

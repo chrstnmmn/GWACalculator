@@ -82,6 +82,7 @@ button {
 body {
   background: url(../IMG/Pattern\ 45.png) lightgray 0% 0%/50px 50px repeat;
   font-family: "Inter", serif;
+  overflow-x: hidden;
 }
 body .contentWrapper {
   padding-block: 10rem;

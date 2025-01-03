@@ -1,0 +1,295 @@
+@import "style.scss";
+
+.summary-of-Findings {
+	.summary-Wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+
+		.summary-Title {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 14px;
+
+			width: 594px;
+
+			border-radius: $Radius;
+			background: $Accent02;
+			box-shadow: $Box_Shadow;
+
+			.icon-title {
+				width: 21px;
+				height: 21px;
+			}
+			.TitleResult {
+				color: $Main;
+				text-align: center;
+				font-size: 1.5rem;
+				font-weight: 800;
+				padding-block: 0.3em;
+
+				pointer-events: none;
+				user-select: none;
+			}
+		}
+		.SummaryTable {
+			display: grid;
+			grid-template-columns: 329px 85px 97px 120px 101px;
+			grid-template-rows: 37px 1fr 43px 43px;
+			grid-template-areas:
+				"CourseTitle GradesTitle UnitsTitle RemarksTitle CreditsTitle"
+				"CourseTable GradesTable UnitsTable RemarksTable CreditsTable"
+				"TotalUnits TotalUnits GWAResult GWAResult GWAResult"
+				"TotalCredits TotalCredits GWAResult GWAResult GWAResult";
+
+			gap: 10px;
+
+			#Course-Catalog-Title {
+				grid-area: CourseTitle;
+			}
+			.Course-Catalog-Table {
+				grid-area: CourseTable;
+			}
+			#Grades-Title {
+				grid-area: GradesTitle;
+			}
+			.Grades-Table {
+				grid-area: GradesTable;
+			}
+			#Units-Title {
+				grid-area: UnitsTitle;
+			}
+			.Units-Table {
+				grid-area: UnitsTable;
+			}
+			#Remarks-Title {
+				grid-area: RemarksTitle;
+			}
+			.Remarks-Table {
+				grid-area: RemarksTable;
+			}
+			#Credits-Title {
+				grid-area: CreditsTitle;
+			}
+			.Credits-Table {
+				grid-area: CreditsTable;
+			}
+			#TotalUnits {
+				grid-area: TotalUnits;
+			}
+			#TotalCredits {
+				grid-area: TotalCredits;
+			}
+			#GWA {
+				grid-area: GWAResult;
+			}
+
+			.Table-Title {
+				align-self: center;
+				border-radius: $Radius;
+				background: $Main;
+				box-shadow: $Box_Shadow;
+				color: $Accent02;
+
+				text-align: center;
+				padding-block: 0.1em;
+
+				pointer-events: none;
+				user-select: none;
+			}
+			.Course-Catalog-Table,
+			.Grades-Table,
+			.Units-Table,
+			.Remarks-Table,
+			.Credits-Table {
+				width: 100%;
+				pointer-events: none;
+				user-select: none;
+				gap: 5px;
+
+				display: flex;
+				flex-direction: column;
+				padding-inline: 15px;
+
+				border-radius: $Radius;
+				background: $Main;
+				box-shadow: $Box_Shadow;
+				padding-block: 0.5em;
+
+				li {
+					list-style: none;
+					color: $Accent02;
+					font-size: 1rem;
+					font-weight: 700;
+				}
+			}
+
+			.Grades-Table,
+			.Units-Table,
+			.Credits-Table {
+				li {
+					align-self: center;
+				}
+			}
+
+			.Remarks-Table {
+				li {
+					display: flex;
+					align-items: center;
+					gap: 6px;
+					img {
+						width: 18px;
+						height: 18px;
+					}
+					h2 {
+						color: $Accent02;
+						font-size: 1rem;
+						font-weight: 700;
+					}
+				}
+			}
+			.Total-Units,
+			.Total-Credits {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				padding: 0.3em 1.5em;
+
+				border-radius: $Radius;
+				background: $Main;
+				box-shadow: $Box_Shadow;
+
+				h4 {
+					color: $Accent02;
+					text-align: center;
+					font-size: 1.25rem;
+					font-weight: 700;
+				}
+			}
+			.GWA-Result {
+				border-radius: $Radius;
+				background: $Main;
+				box-shadow: $Box_Shadow;
+
+				display: flex;
+				align-items: center;
+				justify-content: space-evenly;
+
+				h4 {
+					color: $Accent02;
+					text-align: center;
+					font-size: 1.5rem;
+					font-weight: 800;
+				}
+				.GWA-Value {
+					width: 103px;
+					padding-block: 0.3em;
+
+					border-radius: $Radius;
+					background: $Accent01;
+					box-shadow: $Box_Shadow;
+					color: $Main;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (width < 1000px) {
+	.summary-of-Findings {
+		.SummaryTable {
+			grid-template-columns: 329px 85px 180px !important;
+			grid-template-rows: 37px 1fr 39px 39px !important;
+			grid-template-areas:
+				"CourseTitle GradesTitle RemarksTitle"
+				"CourseTable GradesTable RemarksTable"
+				"TotalUnits  GWAResult GWAResult"
+				"TotalCredits  GWAResult GWAResult" !important;
+
+			#Units-Title,
+			#Credits-Title,
+			.Units-Table,
+			.Credits-Table {
+				display: none !important;
+			}
+			.Total-Units,
+			.Total-Credits {
+				font-size: 1rem !important;
+			}
+			.Remarks-Table {
+				li {
+					padding-inline: 30px;
+				}
+			}
+			.GWA-Result {
+				h4 {
+					font-size: 1.25rem !important;
+					font-weight: 700 !important;
+				}
+				.GWA-Value {
+					width: 90px !important;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (width < 700px) {
+	.summary-of-Findings {
+		.summary-Wrapper {
+			.summary-Title {
+				width: 280px;
+
+				.icon-title {
+					width: 17px;
+					height: 17px;
+				}
+				.TitleResult {
+					font-size: 1rem;
+					font-weight: 700;
+				}
+			}
+			.SummaryTable {
+				grid-template-columns: 115px 150px !important;
+				grid-template-rows: 37px 1fr 37px 1fr 39px 39px 66px !important;
+				grid-template-areas:
+					"CourseTitle CourseTitle"
+					"CourseTable CourseTable"
+					"GradesTitle RemarksTitle"
+					"GradesTable RemarksTable"
+					"TotalUnits TotalUnits"
+					"TotalCredits TotalCredits"
+          "GWAResult GWAResult" !important;
+
+				#Units-Title,
+				#Credits-Title,
+				.Units-Table,
+				.Credits-Table {
+					display: none !important;
+				}
+				.Total-Units,
+				.Total-Credits {
+					font-size: 1rem !important;
+				}
+				.Remarks-Table {
+					li {
+						padding-inline: 16px;
+					}
+				}
+				.GWA-Result {
+					h4 {
+						font-size: 1.25rem !important;
+						font-weight: 700 !important;
+					}
+					.GWA-Value {
+						width: 90px !important;
+					}
+				}
+			}
+		}
+	}
+}

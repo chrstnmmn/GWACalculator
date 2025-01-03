@@ -37,7 +37,7 @@
 		}
 		.SummaryTable {
 			display: grid;
-			grid-template-columns: 329px 85px 97px 120px 101px;
+			grid-template-columns: 319px 95px 97px 120px 101px;
 			grid-template-rows: 37px 1fr 43px 43px;
 			grid-template-areas:
 				"CourseTitle GradesTitle UnitsTitle RemarksTitle CreditsTitle"
@@ -45,7 +45,7 @@
 				"TotalUnits TotalUnits GWAResult GWAResult GWAResult"
 				"TotalCredits TotalCredits GWAResult GWAResult GWAResult";
 
-			gap: 10px;
+			gap: 8px;
 
 			#Course-Catalog-Title {
 				grid-area: CourseTitle;
@@ -263,7 +263,9 @@
 					"GradesTable RemarksTable"
 					"TotalUnits TotalUnits"
 					"TotalCredits TotalCredits"
-          "GWAResult GWAResult" !important;
+					"GWAResult GWAResult" !important;
+
+				gap: 6px !important;
 
 				#Units-Title,
 				#Credits-Title,

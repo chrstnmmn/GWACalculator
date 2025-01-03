@@ -1,0 +1,146 @@
+/*CSS RESET*/
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+button {
+  border-style: none;
+}
+
+input,
+button {
+  border-style: none;
+  outline-color: #0b5793;
+}
+
+.CTA {
+  width: 541px;
+  height: 104px;
+  border-radius: 10px;
+  background: #0b5793;
+  box-shadow: 0px 4px 20.6px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.CTA h1 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.CTA button {
+  width: 115px;
+  height: 24px;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  background: #e7c01d;
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: box-shadow transform 0.1s cubic-bezier(0.4, 0.01, 0.04, 0.88);
+}
+.CTA:hover button {
+  box-shadow: 0px 3px 0px 0px #fff, 0px 6px 20.4px 0px rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+.CTA:active button {
+  transform: translateY(2px);
+  box-shadow: 0px 0px 0px 0px #fff, 0px 0px 11.4px 0px rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (width < 700px) {
+  .CTA {
+    width: 353px;
+    height: 84px;
+    gap: 4px;
+  }
+  .CTA h1 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .CTA button {
+    width: 95px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    background: #e7c01d;
+    color: #ffffff;
+    text-align: center;
+    font-size: 0.625rem;
+    font-weight: 700;
+    box-shadow: 0px 3px 0px 0px #fff, 0px 6px 20.4px 0px rgba(255, 255, 255, 0.5);
+    transition: box-shadow transform 0.1s cubic-bezier(0.4, 0.01, 0.04, 0.88);
+  }
+}
+
+/*# sourceMappingURL=CTA.css.map */

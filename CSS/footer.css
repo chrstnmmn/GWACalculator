@@ -81,76 +81,21 @@ button {
 
 footer {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 400px;
-  background: #ffffff;
-  box-shadow: 0px -7px 0px 0px #e7c01d;
-}
-footer .main .Grading-Wrapper {
-  height: 322px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-inline: 180px;
-}
-footer .main .Grading-Wrapper h4 {
-  align-self: flex-start;
-  color: #0b5793;
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-footer .main .Grading-Wrapper .lists {
-  align-self: flex-start;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 90px;
-}
-footer .main .Grading-Wrapper .lists ul {
-  padding-left: 0;
-}
-footer .main .Grading-Wrapper .lists ul li {
-  color: #0b5793;
-  font-size: 0.875rem;
-  font-weight: 400;
-  list-style-type: none;
-  text-wrap: nowrap;
+  position: static;
+  bottom: 0;
 }
 footer h6 {
-  width: inherit;
   color: #ffffff;
   background-color: #0b5793;
   text-align: center;
   font-size: 0.875rem;
   font-weight: 400;
-  padding-block: 1.5em;
+  padding-block: 1em;
 }
 
-@media screen and (width < 1000px) {
-  footer .main .Grading-Wrapper .lists {
-    flex-wrap: wrap;
-    align-items: start;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  footer h6 {
-    padding-block: 1em;
-  }
-}
 @media screen and (width < 700px) {
-  footer .main .Grading-Wrapper .lists {
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    gap: 0;
-  }
   footer h6 {
     font-size: 0.625em;
-    padding-block: 0.5em;
   }
 }
 

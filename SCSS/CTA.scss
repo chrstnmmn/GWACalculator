@@ -1,0 +1,84 @@
+@import "style.scss";
+
+.CTA {
+	width: 541px;
+	height: 104px;
+
+	border-radius: $Radius;
+	background: $Accent02;
+	box-shadow: $Box_Shadow;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+
+	h1 {
+		color: $Main;
+		text-align: center;
+		font-size: 1.5rem;
+		font-weight: 800;
+	}
+	button {
+		width: 115px;
+		height: 24px;
+
+		border-radius: $Radius;
+		border: 1px solid $Main;
+		background: $Accent01;
+
+		color: $Main;
+		text-align: center;
+		font-size: 0.75rem;
+		font-weight: 700;
+
+		transition: box-shadow transform $transition;
+	}
+	&:hover {
+		button {
+			box-shadow: 0px 3px 0px 0px #fff,
+				0px 6px 20.4px 0px rgba(255, 255, 255, 0.5);
+			transform: translateY(-2px);
+		}
+	}
+	&:active {
+		button {
+			transform: translateY(2px);
+			box-shadow: 0px 0px 0px 0px #fff,
+				0px 0px 11.4px 0px rgba(255, 255, 255, 0.5);
+		}
+	}
+}
+
+@media screen and (width < 700px) {
+	.CTA {
+		width: 353px;
+		height: 84px;
+
+		gap: 4px;
+
+		h1 {
+			font-size: 1rem;
+			font-weight: 700;
+		}
+		button {
+			width: 95px;
+			height: 20px;
+
+			border-radius: $Radius;
+			border: 1px solid $Main;
+			background: $Accent01;
+
+			color: $Main;
+			text-align: center;
+			font-size: 0.625rem;
+			font-weight: 700;
+
+			box-shadow: 0px 3px 0px 0px #fff,
+				0px 6px 20.4px 0px rgba(255, 255, 255, 0.5);
+
+			transition: box-shadow transform $transition;
+		}
+	}
+}

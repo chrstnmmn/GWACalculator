@@ -111,10 +111,10 @@ button {
 }
 .summary-of-Findings .summary-Wrapper .SummaryTable {
   display: grid;
-  grid-template-columns: 329px 85px 97px 120px 101px;
+  grid-template-columns: 319px 95px 97px 120px 101px;
   grid-template-rows: 37px 1fr 43px 43px;
   grid-template-areas: "CourseTitle GradesTitle UnitsTitle RemarksTitle CreditsTitle" "CourseTable GradesTable UnitsTable RemarksTable CreditsTable" "TotalUnits TotalUnits GWAResult GWAResult GWAResult" "TotalCredits TotalCredits GWAResult GWAResult GWAResult";
-  gap: 10px;
+  gap: 8px;
 }
 .summary-of-Findings .summary-Wrapper .SummaryTable #Course-Catalog-Title {
   grid-area: CourseTitle;
@@ -295,6 +295,7 @@ button {
     grid-template-columns: 115px 150px !important;
     grid-template-rows: 37px 1fr 37px 1fr 39px 39px 66px !important;
     grid-template-areas: "CourseTitle CourseTitle" "CourseTable CourseTable" "GradesTitle RemarksTitle" "GradesTable RemarksTable" "TotalUnits TotalUnits" "TotalCredits TotalCredits" "GWAResult GWAResult" !important;
+    gap: 6px !important;
   }
   .summary-of-Findings .summary-Wrapper .SummaryTable #Units-Title,
   .summary-of-Findings .summary-Wrapper .SummaryTable #Credits-Title,

@@ -7,6 +7,7 @@ let CreditScore = 0;
 
 const AddButton = document.getElementById("AddCourseButton");
 AddButton.addEventListener("click", () => {
+	// document.getElementById("Footer").style.display = "none";
 	CumulativeGrades();
 });
 
@@ -314,6 +315,7 @@ function removeCourse(elementId) {
 	// Hide result section if no items remain
 	if (items.length === 0) {
 		document.getElementById("viewResult").style.display = "none";
+		// document.getElementById("Footer").style.display = "none";
 	}
 }
 

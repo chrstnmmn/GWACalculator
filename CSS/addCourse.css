@@ -114,7 +114,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 .addCourse .Main-Card .Courses {
   width: 594px;

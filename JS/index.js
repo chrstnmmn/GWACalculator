@@ -1,14 +1,39 @@
 // initializing variables
 let items = [];
+let GWAItems = [];
 let itemCount = 0;
 let indexPosition = 0;
 let Remarks = 0;
 let CreditScore = 0;
+let unitsValue = 0;
+let GWaId = 0;
 
-const AddButton = document.getElementById("AddCourseButton");
+window.onload = (event) => {
+	HideDOM();
+};
+
+function HideDOM() {
+	document.querySelector("#viewResult").style.display = "none";
+	document.querySelector("#cta").style.display = "none";
+	document.querySelector("#summary").style.display = "none";
+	document.querySelector("#Footer").style.display = "none";
+}
+
+function RevealDOM() {
+	document.querySelector("#viewResult").style.display = "flex";
+	document.querySelector("#cta").style.display = "flex";
+	document.querySelector("#Footer").style.display = "block";
+}
+
+const AddButton = document.querySelector("#AddCourseButton");
 AddButton.addEventListener("click", () => {
-	// document.getElementById("Footer").style.display = "none";
 	CumulativeGrades();
+});
+
+const CTABUTTON = document.querySelector("#CTA-Button");
+CTABUTTON.addEventListener("click", () => {
+	document.querySelector("#summary").style.display = "block";
+	document.querySelector("#cta").style.display = "none";
 });
 
 // this function will be called to compute the average of the grades from prelim to finals
@@ -17,19 +42,39 @@ function CumulativeGrades() {
 	// the array, so that every id is uniquely generated and to ensure the there won't
 	// be any conflict when removing an index inside the array
 	const elementId = Date.now();
+	GWaId = elementId;
 
-	const courseName = document.getElementById("courseInput").value;
-	const courseUnit = parseFloat(document.getElementById("courseUnit").value);
-	const prelim = parseFloat(document.getElementById("prelimInput").value);
-	const midterm = parseFloat(document.getElementById("midtermInput").value);
-	const prefinal = parseFloat(document.getElementById("prefinalInput").value);
-	const final = parseFloat(document.getElementById("finalInput").value);
+	const courseName = document.querySelector("#courseInput").value;
+	const courseUnit = parseFloat(document.querySelector("#courseUnit").value);
+	const prelim = parseFloat(document.querySelector("#prelimInput").value);
+	const midterm = parseFloat(document.querySelector("#midtermInput").value);
+	const prefinal = parseFloat(document.querySelector("#prefinalInput").value);
+	const final = parseFloat(document.querySelector("#finalInput").value);
+
+	unitsValue = courseUnit;
 
 	// this is the percentage the is going to use as a multiplier
 	const Percent = {
 		microPercent: 0.2,
 		macroPercent: 0.4,
 	};
+
+	if (!courseName.trim()) {
+		alert("Course Name cannot be empty!");
+		return;
+	}
+
+	if (
+		courseUnit <= 0 ||
+		prelim < 0 ||
+		midterm < 0 ||
+		prefinal < 0 ||
+		final < 0
+	) {
+		alert("Invalid input values!");
+		clearForms();
+		return;
+	}
 
 	// validating if the user is only putting numbers and not strings
 	if (
@@ -61,10 +106,91 @@ function CumulativeGrades() {
 		ComputeTotal.total2 +
 		ComputeTotal.total3 +
 		ComputeTotal.total4;
-	cumulativeGrade = cumulativeGrade.toFixed(2);
+	cumulativeGrade = Number(cumulativeGrade.toFixed(2));
 	// storing the course detail based from the user to the array for data management
 	// also this is later gonna be used for computing the overall GWA
 
+	AddItems(
+		elementId,
+		courseName,
+		courseUnit,
+		prelim,
+		midterm,
+		prefinal,
+		final,
+		cumulativeGrade
+	);
+	CreateCourseCatalog(
+		elementId,
+		courseName,
+		prelim,
+		midterm,
+		prefinal,
+		final,
+		cumulativeGrade
+	);
+	TranscriptionOfRecords(cumulativeGrade, courseUnit);
+	ComputeGWA();
+	clearForms(); // making sure that the forms are clean after getting the input}
+}
+
+function TranscriptionOfRecords(ComulativeGrade, courseUnit) {
+	console.log(ComulativeGrade);
+
+	if (ComulativeGrade >= 97.5 && ComulativeGrade <= 100) {
+		console.log("Excellent");
+		Remarks = 1.0;
+	} else if (ComulativeGrade >= 88.5 && ComulativeGrade <= 97.49) {
+		console.log("Very Good");
+
+		if (ComulativeGrade >= 88.5 && ComulativeGrade <= 91.49) {
+			Remarks = 1.75;
+		} else if (ComulativeGrade >= 91.5 && ComulativeGrade <= 94.49) {
+			Remarks = 1.5;
+		} else if (ComulativeGrade >= 94.5 && ComulativeGrade <= 97.49) {
+			Remarks = 1.25;
+		}
+	} else if (ComulativeGrade >= 77.5 && ComulativeGrade <= 88.49) {
+		console.log("Satisfactory");
+
+		if (ComulativeGrade >= 77.5 && ComulativeGrade <= 81.49) {
+			Remarks = 2.5;
+		} else if (ComulativeGrade >= 81.5 && ComulativeGrade <= 85.49) {
+			Remarks = 2.25;
+		} else if (ComulativeGrade >= 85.5 && ComulativeGrade <= 88.49) {
+			Remarks = 2.0;
+		}
+	} else if (ComulativeGrade >= 69.5 && ComulativeGrade <= 77.49) {
+		console.log("Fair");
+
+		if (ComulativeGrade >= 73.5 && ComulativeGrade <= 77.49) {
+			Remarks = 2.75;
+		} else if (ComulativeGrade >= 69.5 && ComulativeGrade <= 73.49) {
+			Remarks = 3.0;
+		}
+	} else if (ComulativeGrade <= 69.49) {
+		console.log("Failed");
+		Remarks = 5.0;
+	}
+	// else {
+	// 	console.log("Invalid Grade Result");
+	// 	Remarks = 0;
+	// }
+
+	CreditScore = courseUnit * Remarks;
+	console.log("Credit Score: " + CreditScore);
+}
+
+function AddItems(
+	elementId,
+	courseName,
+	courseUnit,
+	prelim,
+	midterm,
+	prefinal,
+	final,
+	cumulativeGrade
+) {
 	items.push({
 		elementId,
 		courseName,
@@ -80,11 +206,11 @@ function CumulativeGrades() {
 		console.log("Item added: " + itemCount);
 		console.log("Index position of: " + indexPosition);
 		console.log(items);
-		TranscriptionOfRecords(cumulativeGrade, courseUnit);
 
 		// if the item inside the array is not emtpy, it will show the result section
 		if (itemCount > 0) {
 			document.getElementById("viewResult").style.display = "flex";
+			RevealDOM();
 			viewResult.scrollIntoView({
 				behavior: "smooth",
 				block: "start",
@@ -92,58 +218,51 @@ function CumulativeGrades() {
 			});
 		}
 	}
-	CreateCourseCatalog(
-		elementId,
-		courseName,
-		prelim,
-		midterm,
-		prefinal,
-		final,
-		cumulativeGrade
-	);
-	clearForms(); // making sure that the forms are clean after getting the input}
 }
 
-function TranscriptionOfRecords(overall, courseUnit) {
-	console.log(overall);
+function ComputeGWA() {
+	GWAItems.push({ GWaId, Remarks, unitsValue, CreditScore });
 
-	if (overall >= 97.5 && overall <= 100) {
-		console.log("Excellent");
-		Remarks = 1.0;
-	} else if (overall >= 88.5 && overall <= 97.49) {
-		console.log("Very Good");
-
-		if (overall >= 88.5 && overall <= 91.49) {
-			Remarks = 1.75;
-		} else if (overall >= 91.5 && overall <= 94.49) {
-			Remarks = 1.5;
-		} else if (overall >= 94.5 && overall <= 97.49) {
-			Remarks = 1.25;
-		}
-	} else if (overall >= 77.5 && overall <= 88.49) {
-		console.log("Satisfactory");
-
-		if (overall >= 77.5 && overall <= 81.49) {
-			Remarks = 2.5;
-		} else if (overall >= 81.5 && overall <= 85.49) {
-			Remarks = 2.25;
-		} else if (overall >= 85.5 && overall <= 88.49) {
-			Remarks = 2.0;
-		}
-	} else if (overall >= 69.5 && overall <= 73.49) {
-		console.log("Fair");
-		Remarks = 3.0;
-	} else if (overall <= 69.49) {
-		console.log("Failed");
-		Remarks = 5.0;
-	} else {
-		console.log("Invalid Grade Result");
-		Remarks = 0;
+	for (let i = 0; i < GWAItems.length; i++) {
+		let count = 0;
+		count = GWAItems.length;
+		console.log(GWAItems);
 	}
-	console.log(Remarks.toFixed(2));
+}
 
-	CreditScore = courseUnit * Remarks;
-	console.log("Credit Score: " + CreditScore);
+// this will remove the item course, also removing it from the array
+function removeCourse(elementId) {
+	// Find the index of the item with the matching ID
+	const index = items.findIndex((item) => item.elementId === elementId);
+	const GWAIndex = GWAItems.findIndex(
+		(gwaItem) => gwaItem.GWaId === elementId
+	);
+
+	// Remove the item if found
+	if (index !== -1) {
+		items.splice(index, 1); // Remove 1 element at 'index'
+		GWAItems.splice(GWAIndex, 1);
+	}
+
+	// Remove the DOM element
+	const element = document.getElementById(elementId);
+	if (element) {
+		element.remove();
+	}
+
+	console.log("Remaining Items: ", items);
+	console.log("Remaining GWA Items: ", GWAItems);
+
+	// Hide result section if no items remain
+	if (items.length === 0) {
+		document.querySelector("#viewResult").style.display = "none";
+		HideDOM();
+	}
+}
+
+function SummaryTable() {
+	const CourseNameList_Parent = document.querySelector(".Course-Catalog-Table");
+	const CourseNameList_Child = document.createElement("li");
 }
 
 function CreateCourseCatalog(
@@ -292,31 +411,6 @@ function CreateCourseCatalog(
 	resultTable.appendChild(RemoveCourseButton);
 
 	tableWrapper.appendChild(resultTable);
-}
-
-// this will remove the item course, also removing it from the array
-function removeCourse(elementId) {
-	// Find the index of the item with the matching ID
-	const index = items.findIndex((item) => item.elementId === elementId);
-
-	// Remove the item if found
-	if (index !== -1) {
-		items.splice(index, 1); // Remove 1 element at 'index'
-	}
-
-	// Remove the DOM element
-	const element = document.getElementById(elementId);
-	if (element) {
-		element.remove();
-	}
-
-	console.log("Remaining Items: ", items);
-
-	// Hide result section if no items remain
-	if (items.length === 0) {
-		document.getElementById("viewResult").style.display = "none";
-		// document.getElementById("Footer").style.display = "none";
-	}
 }
 
 // this function is for cleaning the forms
